@@ -1,6 +1,7 @@
 format: jb-book
 root: README
 parts:
-  - caption: Introduction
+  - caption: Intoduction to Intake
     chapters:
-      - file: notebooks/notebook-template
+      - file: notebooks/intake_introduction
+      - file: notebooks/creating_catalogs

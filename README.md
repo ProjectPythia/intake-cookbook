@@ -1,34 +1,34 @@
-<img src="thumbnail.png" alt="thumbnail" width="300"/>
+<img src="thumbnail.svg" alt="thumbnail" width="300"/>
 
-# (Replace_with_your_title) Cookbook
+# Intake Cookbook
 
-[![nightly-build](https://github.com/ProjectPythiaCookbooks/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythiaCookbooks/cookbook-template/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder-staging.2i2c.cloud/badge_logo.svg)](https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaCookbooks/cookbook-template/main?labpath=notebooks)
+[![nightly-build](https://github.com/ProjectPythiaCookbooks/intake-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythiaCookbooks/cookbook-template/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder-staging.2i2c.cloud/badge_logo.svg)](https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaCookbooks/intake-cookbook/main?labpath=notebooks)
 
-This Project Pythia Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., *working with radar data in Python*)
+This Project Pythia Cookbook covers using and creating Intake catalogs to access data.
 
 ## Motivation
 
-(Add a few sentences stating why this cookbook will be useful. What skills will you, "the chef", gain once you have reached the end of the cookbook?)
+This cookbook will help simplify the way you access and share data in your research. You will learn to access data using Intake catalogs and create Intake catalogs to make your data available to others.
 
 ## Authors
 
-[First Author](@first-author), [Second Author](@second-author), etc. *Acknowledge primary content authors here*
+[James Morley](@first-author)
 
 ### Contributors
 
-<a href="https://github.com/ProjectPythiaCookbooks/cookbook-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ProjectPythiaCookbooks/cookbook-template" />
+<a href="https://github.com/ProjectPythiaCookbooks/intake-cookbook/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ProjectPythiaCookbooks/intake-cookbook" />
 </a>
 
 ## Structure
-(State one or more sections that will comprise the notebook. E.g., *This cookbook is broken up into two main sections - "Foundations" and "Example Workflows."* Then, describe each section below.)
+This cookbook is broken up into two main sections - "Introduction to Intake" and "Creating Intake Catalogs."
 
-### Section 1 ( Replace with the title of this section, e.g. "Foundations" )
-(Add content for this section, e.g., "The foundational content includes ... ")
+### Introduction to Intake
+This section describes how to use intake catalogs to access data. It shows how to find information about catalog entries, how to set user parameters, and how to use intake with Dask.
 
-### Section 2 ( Replace with the title of this section, e.g. "Example workflows" )
-(Add content for this section, e.g., "Example workflows include ... ")
+### Creating Intake Catalogs
+This section walks you through the process of creating your own Intake catalogs to access Mesowest's HRRR data.
 
 ## Running the Notebooks
 You can either run the notebook using [Binder](https://mybinder.org/) or on your local machine.
@@ -52,22 +52,21 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 
 ### Running on Your Own Machine
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
+  
 
-(Replace "cookbook-example" with the title of your cookbooks)   
-
-1. Clone the `https://github.com/ProjectPythiaCookbooks/cookbook-example` repository:
+1. Clone the `https://github.com/ProjectPythiaCookbooks/intake-cookbook` repository:
 
    ```bash
-    git clone https://github.com/ProjectPythiaCookbooks/cookbook-example.git
+    git clone https://github.com/ProjectPythiaCookbooks/intake-cookbook.git
     ```  
-1. Move into the `cookbook-example` directory
+1. Move into the `intake-cookbook` directory
     ```bash
-    cd cookbook-example
+    cd intake-cookbook
     ```  
 1. Create and activate your conda environment from the `environment.yml` file
     ```bash
     conda env create -f environment.yml
-    conda activate cookbook-example
+    conda activate intake-cookbook-dev
     ```  
 1.  Move into the `notebooks` directory and start up Jupyterlab
     ```bash
