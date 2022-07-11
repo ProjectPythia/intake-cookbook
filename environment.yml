@@ -1,9 +1,19 @@
-name: cookbook-dev
+name: intake-cookbook-dev
 channels:
   - conda-forge
 dependencies:
   - jupyter-book
+  - python
   - jupyterlab
+  - s3fs
+  - intake
+  - intake-xarray
   - pip
+  - cartopy
+  - matplotlib
+  - metpy
+  - requests
+  - aiohttp
   - pip:
       - sphinx-pythia-theme
+      - git+https://git@github.com/jnmorley/intake-markdown.git
