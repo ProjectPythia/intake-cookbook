@@ -49,7 +49,7 @@ projection = ccrs.LambertConformal(central_longitude=262.5,
                                     globe=ccrs.Globe(semimajor_axis=6371229,
                                                      semiminor_axis=6371229))
 
-def finesse_dataset(ds):
+def prepare_dataset(ds):
     ds = ds.rename(projection_x_coordinate="x", projection_y_coordinate="y")
     ds = ds.metpy.assign_crs(projection.to_cf())
     ds = ds.metpy.assign_latitude_longitude()
@@ -59,7 +59,7 @@ def finesse_dataset(ds):
 date = dt.datetime(2019, 8, 9)
 dates = [date + dt.timedelta(hours=i) for i in range(24)]
 datasets = [cat.hrrrzarr(date=hour).read() for hour in dates]
-datasets = [finesse_dataset(dataset) for dataset in datasets]
+datasets = [prepare_dataset(dataset) for dataset in datasets]
 ds = xr.concat(datasets, dim='time', combine_attrs="drop_conflicts")
 ```
 
