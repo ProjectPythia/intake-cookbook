@@ -22,7 +22,15 @@ This cookbook will help simplify the way you access and share data in your resea
 </a>
 
 ## Structure
-This cookbook is broken up into two main sections - "Introduction to Intake" and "Creating Intake Catalogs."
+This cookbook is broken up into two main sections - "Introduction to Intake" and "Creating Intake Catalogs." 
+
+### About HRRR
+High-Resolution Rapid Refresh (HRRR) is a atmospheric model maintained by [NOAA](https://www.noaa.gov/). As stated on NOAA's [website](https://rapidrefresh.noaa.gov/hrrr/)
+
+> The HRRR is a NOAA real-time 3-km resolution, hourly updated, cloud-resolving, convection-allowing atmospheric model, initialized by 3km grids with 3km radar assimilation. Radar data is
+> assimilated in the HRRR every 15 min over a 1-h period adding further detail to that provided by the hourly data assimilation from the 13km radar-enhanced Rapid Refresh.
+
+Throughout this cookbook we use a subset of HRRR data maintained by Mesowest on AWS S3 object storage. 
 
 ### Introduction to Intake
 This section describes how to use intake catalogs to access data. It shows how to find information about catalog entries, how to set user parameters, and how to use intake with Dask.

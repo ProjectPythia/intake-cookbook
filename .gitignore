@@ -131,4 +131,4 @@ dmypy.json
 .pyre/
 
 #demo directory
-notebooks/intake_demo/
+notebooks/intake-demo/
