@@ -14,7 +14,7 @@ jobs:
       environment_name: cookbook-dev
       environment_file: environment.yml
       path_to_notebooks: ./
-      use_cached_environment: 'false'
+      use_cached_environment: 'true'
 
   deploy:
     needs: build
