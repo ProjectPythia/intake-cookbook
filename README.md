@@ -13,7 +13,7 @@ This cookbook will help simplify the way you access and share data in your resea
 
 ## Authors
 
-[James Morley](@first-author)
+[James Morley](https://github.com/jnmorley/)
 
 ### Contributors
 
