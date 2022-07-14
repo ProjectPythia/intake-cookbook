@@ -245,14 +245,14 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ProjectPythiaCookbooks/cookbook-template/"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/jnmorley/intake-cookbook/"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ProjectPythiaCookbooks/cookbook-template//issues/new?title=Issue%20on%20page%20%2Fnotebooks/README.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jnmorley/intake-cookbook//issues/new?title=Issue%20on%20page%20%2Fnotebooks/README.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ProjectPythiaCookbooks/cookbook-template/edit/main/notebooks/README.md"><button
+        <a class="edit-button" href="https://github.com/jnmorley/intake-cookbook/edit/main/notebooks/README.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -280,6 +280,18 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dependencies">
    Dependencies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-the-data">
+     About the Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hrrr-projection">
+   HRRR Projection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -312,7 +324,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="intake-demo-readme">
 <h1>Intake Demo Readme<a class="headerlink" href="#intake-demo-readme" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
-<p>This repository was made as a educational resource to learn the Python library Intake. It contains an intake catalog pointing to <a class="reference external" href="https://mesowest.utah.edu/html/hrrr/">Mesowest’s HRRR Zarr data</a>.</p>
+<p>This repository was made as a educational resource to learn the Python library Intake. It contains an intake catalog pointing to <a class="reference external" href="https://mesowest.utah.edu/html/hrrr/">Mesowest’s High-Resolution Rapid Refresh (HRRR) Zarr data</a>.</p>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <ul class="simple">
@@ -322,9 +334,46 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <li><p>s3fs</p></li>
 <li><p>Intake-xarray</p></li>
 <li><p>Intake-markdown</p></li>
-<li><p>metpy</p></li>
 <li><p>cartopy</p></li>
 </ul>
+<div class="section" id="about-the-data">
+<h3>About the Data<a class="headerlink" href="#about-the-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>High-Resolution Rapid Refresh (HRRR) is a atmospheric model maintained by <a class="reference external" href="https://www.noaa.gov/">NOAA</a>. As stated on NOAA’s <a class="reference external" href="https://rapidrefresh.noaa.gov/hrrr/">website</a></p>
+<blockquote>
+<div><p>The HRRR is a NOAA real-time 3-km resolution, hourly updated, cloud-resolving, convection-allowing atmospheric model, initialized by 3km grids with 3km radar assimilation. Radar data is
+assimilated in the HRRR every 15 min over a 1-h period adding further detail to that provided by the hourly data assimilation from the 13km radar-enhanced Rapid Refresh.</p>
+</div></blockquote>
+<p>In this cookbook we use a subset of HRRR data maintained by Mesowest on AWS S3 object storage.</p>
+</div>
+</div>
+<div class="section" id="hrrr-projection">
+<h2>HRRR Projection<a class="headerlink" href="#hrrr-projection" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>From Mesowest’s <a class="reference external" href="https://mesowest.utah.edu/html/hrrr/zarr_documentation/html/python_data_loading.html">HRRR Zarr Data Loading Guide</a></p>
+<blockquote>
+The projection description for the spatial grid, which is stored in the HRRR grib2 files, is not available directly in the zarr arrays. Additionally, the zarr data has the x and y coordinates in the native Lambert Conformal Conic projection, but not the latitude and longitude data. The various use cases will have more specific examples of how to handle this information, but here we'll note that:
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The proj params you need to define the grid correctly are:
+</pre></div>
+</div>
+<p>{‘a’: 6371229,
+‘b’: 6371229,
+‘proj’: ‘lcc’,
+‘lon_0’: 262.5,
+‘lat_0’: 38.5,
+‘lat_1’: 38.5,
+‘lat_2’: 38.5}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>We also offer a &quot;chunk index&quot; that has the latitude and longitude coordinates for the grid, more on that under Use Case 3.
+
+The following code sets up the correct CRS in cartopy:
+</pre></div>
+</div>
+</blockquote>
+```python
+projection = ccrs.LambertConformal(central_longitude=262.5, 
+                                   central_latitude=38.5, 
+                                   standard_parallels=(38.5, 38.5),
+                                    globe=ccrs.Globe(semimajor_axis=6371229,
+                                                     semiminor_axis=6371229))
+```
 </div>
 <div class="section" id="data-dictionary">
 <h2>Data Dictionary<a class="headerlink" href="#data-dictionary" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
@@ -349,7 +398,6 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <h3>Combining a Days Worth of Data<a class="headerlink" href="#combining-a-days-worth-of-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">intake</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">metpy</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
@@ -360,18 +408,9 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                                    <span class="n">standard_parallels</span><span class="o">=</span><span class="p">(</span><span class="mf">38.5</span><span class="p">,</span> <span class="mf">38.5</span><span class="p">),</span>
                                     <span class="n">globe</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">semimajor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">,</span>
                                                      <span class="n">semiminor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">prepare_dataset</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">projection_x_coordinate</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">projection_y_coordinate</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">metpy</span><span class="o">.</span><span class="n">assign_crs</span><span class="p">(</span><span class="n">projection</span><span class="o">.</span><span class="n">to_cf</span><span class="p">())</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">metpy</span><span class="o">.</span><span class="n">assign_latitude_longitude</span><span class="p">()</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ds</span>
-
 <span class="n">date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span>
-<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">cat</span><span class="o">.</span><span class="n">hrrrzarr</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">hour</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span>
-<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">]</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">cat</span><span class="o">.</span><span class="n">hrrrzarr</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">hour</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="n">hours</span><span class="p">]</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">combine_attrs</span><span class="o">=</span><span class="s2">&quot;drop_conflicts&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -447,7 +486,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 11 July 2022.
+          Last updated on 14 July 2022.
         </p>
       </div>
     </div>

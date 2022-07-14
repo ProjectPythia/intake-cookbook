@@ -246,14 +246,14 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ProjectPythiaCookbooks/cookbook-template/"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/jnmorley/intake-cookbook/"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ProjectPythiaCookbooks/cookbook-template//issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jnmorley/intake-cookbook//issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ProjectPythiaCookbooks/cookbook-template/edit/main/README.md"><button
+        <a class="edit-button" href="https://github.com/jnmorley/intake-cookbook/edit/main/README.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -300,6 +300,11 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
    Structure
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#about-hrrr">
+     About HRRR
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#introduction-to-intake">
      Introduction to Intake
@@ -363,6 +368,15 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <div class="section" id="structure">
 <h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>This cookbook is broken up into two main sections - “Introduction to Intake” and “Creating Intake Catalogs.”</p>
+<div class="section" id="about-hrrr">
+<h3>About HRRR<a class="headerlink" href="#about-hrrr" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>High-Resolution Rapid Refresh (HRRR) is a atmospheric model maintained by <a class="reference external" href="https://www.noaa.gov/">NOAA</a>. As stated on NOAA’s <a class="reference external" href="https://rapidrefresh.noaa.gov/hrrr/">website</a></p>
+<blockquote>
+<div><p>The HRRR is a NOAA real-time 3-km resolution, hourly updated, cloud-resolving, convection-allowing atmospheric model, initialized by 3km grids with 3km radar assimilation. Radar data is
+assimilated in the HRRR every 15 min over a 1-h period adding further detail to that provided by the hourly data assimilation from the 13km radar-enhanced Rapid Refresh.</p>
+</div></blockquote>
+<p>Throughout this cookbook we use a subset of HRRR data maintained by Mesowest on AWS S3 object storage.</p>
+</div>
 <div class="section" id="introduction-to-intake">
 <h3>Introduction to Intake<a class="headerlink" href="#introduction-to-intake" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>This section describes how to use intake catalogs to access data. It shows how to find information about catalog entries, how to set user parameters, and how to use intake with Dask.</p>
@@ -500,7 +514,7 @@ jupyter lab
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 11 July 2022.
+          Last updated on 14 July 2022.
         </p>
       </div>
     </div>

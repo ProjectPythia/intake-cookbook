@@ -246,14 +246,14 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/ProjectPythiaCookbooks/cookbook-template/"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/jnmorley/intake-cookbook/"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/ProjectPythiaCookbooks/cookbook-template//issues/new?title=Issue%20on%20page%20%2Fnotebooks/creating_catalogs.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jnmorley/intake-cookbook//issues/new?title=Issue%20on%20page%20%2Fnotebooks/creating_catalogs.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ProjectPythiaCookbooks/cookbook-template/edit/main/notebooks/creating_catalogs.ipynb"><button
+        <a class="edit-button" href="https://github.com/jnmorley/intake-cookbook/edit/main/notebooks/creating_catalogs.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -273,7 +273,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://binder-staging.2i2c.cloud/v2/gh/ProjectPythiaCookbooks/cookbook-template/main?urlpath=lab/tree/notebooks/creating_catalogs.ipynb"><button type="button"
+        <a class="binder-button" href="https://binder-staging.2i2c.cloud/v2/gh/jnmorley/intake-cookbook/main?urlpath=lab/tree/notebooks/creating_catalogs.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -381,7 +381,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="xref myst">Intro to Intake</span></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="intake_introduction.html"><span class="doc std std-doc">Intro to Intake</span></a></p></td>
 <td><p>Necessary</p></td>
 <td><p></p></td>
 </tr>
@@ -426,8 +426,8 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <div class="section" id="setting-up-the-environment">
 <h2>Setting up the Environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>By the end of this tutorial we will have created a git repository that we can host on Github to share our catalog.</p>
-<p>Start by <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/create-a-repo">creating a Github repository</a> called “intake_demo”, and then clone the repository to your local machine.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone <span class="o">{</span>path to Github repository<span class="o">}</span>
+<p>Start by <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/create-a-repo">creating a Github repository</a> called “intake-demo”, and then clone the repository to your local machine. Be sure to replace path/to/Github/repository with the name of the repository you just made in the following command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone path/to/Github/repository
 </pre></div>
 </div>
 <p>Intake catalogs can be a simple yaml file. We can create the yaml file programmatically by converting nested python dictionaries to yaml. A Intake catalog has two main parts metadata and sources. The metadata can be arbitrary with a few exceptions. The sources section is a mapping between a data source name and its properties. For more information about Intake catalogs, see Intake’s <a class="reference external" href="https://intake.readthedocs.io/en/latest/catalog.html">documentation</a></p>
@@ -439,17 +439,17 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                        <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="n">description</span><span class="p">},</span>
            <span class="s1">&#39;sources&#39;</span><span class="p">:</span> <span class="p">{}}</span>
 
-<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;intake_demo&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#only needed for building this notebook</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;intake_demo/catalog.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;intake-demo&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#only needed for building this notebook</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;intake-demo/catalog.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">catalog</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>You will now notice a new file in your <code class="docutils literal notranslate"><span class="pre">intake_demo</span></code> directory called <code class="docutils literal notranslate"><span class="pre">catalog.yml</span></code> with the following contents.</p>
+<p>You will now notice a new file in your “intake-demo” directory called “catalog.yml” with the following contents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;intake_demo/catalog.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;intake-demo/catalog.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
 </div>
@@ -469,7 +469,7 @@ sources: {}
 <h2>Adding Your First Data Source<a class="headerlink" href="#adding-your-first-data-source" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>Intake only knows how to handle a few different data formats. To handle other formats it uses plugable drivers. To use the <a class="reference external" href="https://mesowest.utah.edu/html/hrrr/">Mesowest’s HRRR Zarr data</a> we will use the intake-xarray package which provides a driver for reading Zarr data into <a class="reference external" href="https://foundations.projectpythia.org/core/xarray.html">Xarray</a> datasets. Drivers are installed as python packages and integrate into the Intake library. When intalled Intake creates a open_{driver} method for each driver in the package. Installing the intake-xarray package allows us to access zarr data using the <code class="docutils literal notranslate"><span class="pre">open_zarr</span></code> method.</p>
 <p>Mesowest’s HRRR Zarr data is stored in AWS. The <a class="reference external" href="https://mesowest.utah.edu/html/hrrr/zarr_documentation/html/zarr_variables.html">file structure</a> of the <a class="reference external" href="https://hrrrzarr.s3.amazonaws.com/index.html">hrrrzarr S3 bucket</a> looks like</p>
-<p>s3://hrrrzarr/sfc/{yyyymmdd}/{yyyymmdd}_{hh}z_anl.zarr/{level}/{param}/{level}</p>
+<p>s3://hrrrzarr/sfc/yyyymmdd/yyyymmdd_hhz_anl.zarr/level/param/level</p>
 <p>where</p>
 <ul class="simple">
 <li><p>yyyy = four digit year</p></li>
@@ -480,8 +480,8 @@ sources: {}
 <li><p>param = the parameter your interested in</p></li>
 </ul>
 <p>To load a complete dataset we need the Zarr arrays from two urls</p>
-<p>s3://hrrrzarr/sfc/{yyyymmdd}/{yyyymmdd}_{hh}z_anl.zarr/{level}/{parameter}{level}</p>
-<p>s3://hrrrzarr/sfc/{yyyymmdd}/{yyyymmdd}_{hh}z_anl.zarr/{level}/{parameter}</p>
+<p>s3://hrrrzarr/sfc/yyyymmdd/yyyymmdd_hhz_anl.zarr/level/param/level</p>
+<p>s3://hrrrzarr/sfc/yyyymmdd/yyyymmdd_hhz_anl.zarr/level/param</p>
 <p>Lets load surface temperature data from August 24, 2016</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -865,18 +865,18 @@ Data variables:
     forecast_reference_time  datetime64[ns] 2016-08-24
     height                   float64 1e+03
     pressure                 float64 2.5e+04
-    time                     datetime64[ns] 2016-08-24</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-7000f446-aea9-4c78-9657-44615d72702f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-7000f446-aea9-4c78-9657-44615d72702f' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>projection_x_coordinate</span>: 1799</li><li><span class='xr-has-index'>projection_y_coordinate</span>: 1059</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-96689981-0184-40e9-944a-5375f378a0c5' class='xr-section-summary-in' type='checkbox'  checked><label for='section-96689981-0184-40e9-944a-5375f378a0c5' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_x_coordinate</span></div><div class='xr-var-dims'>(projection_x_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.698e+06 -2.695e+06 ... 2.696e+06</div><input id='attrs-e17f9c5c-6878-41e6-b247-908db23e1456' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e17f9c5c-6878-41e6-b247-908db23e1456' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8a2df328-bcff-433d-94fe-6ca902fd447b' class='xr-var-data-in' type='checkbox'><label for='data-8a2df328-bcff-433d-94fe-6ca902fd447b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2697520.142522, -2694520.142522, -2691520.142522, ...,  2690479.857478,
-        2693479.857478,  2696479.857478])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_y_coordinate</span></div><div class='xr-var-dims'>(projection_y_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.587e+06 -1.584e+06 ... 1.587e+06</div><input id='attrs-46896e4f-c1a0-4a61-bb07-edcefd1a99c0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-46896e4f-c1a0-4a61-bb07-edcefd1a99c0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-33175027-cbb2-4810-ac7d-95d9e51a4395' class='xr-var-data-in' type='checkbox'><label for='data-33175027-cbb2-4810-ac7d-95d9e51a4395' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-1587306.152557, -1584306.152557, -1581306.152557, ...,  1580693.847443,
-        1583693.847443,  1586693.847443])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-eccb8403-b903-4b4f-9612-1022ff12675c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-eccb8403-b903-4b4f-9612-1022ff12675c' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TMP</span></div><div class='xr-var-dims'>(projection_y_coordinate, projection_x_coordinate)</div><div class='xr-var-dtype'>float16</div><div class='xr-var-preview xr-preview'>298.5 298.5 298.5 ... 291.8 291.8</div><input id='attrs-495f9c8a-ae7c-499f-8bf3-201d1392f3c1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-495f9c8a-ae7c-499f-8bf3-201d1392f3c1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f32eb34f-a94f-4146-aed5-fcb2f0f6b578' class='xr-var-data-in' type='checkbox'><label for='data-f32eb34f-a94f-4146-aed5-fcb2f0f6b578' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>GRIB_PARAM :</span></dt><dd>[2, 0, 0, 0]</dd><dt><span>coordinates :</span></dt><dd>forecast_period pressure height time forecast_reference_time</dd><dt><span>long_name :</span></dt><dd>surface/TMP</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>array([[298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.5],
+    time                     datetime64[ns] 2016-08-24</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-c5f90315-b9f3-483c-b72e-f576215af1c7' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-c5f90315-b9f3-483c-b72e-f576215af1c7' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>projection_x_coordinate</span>: 1799</li><li><span class='xr-has-index'>projection_y_coordinate</span>: 1059</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-bbb0bea4-305d-407d-aa95-50f76d4bd67b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-bbb0bea4-305d-407d-aa95-50f76d4bd67b' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_x_coordinate</span></div><div class='xr-var-dims'>(projection_x_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.698e+06 -2.695e+06 ... 2.696e+06</div><input id='attrs-7d95be42-1bf6-421c-ad1f-9f42aab6ccbf' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-7d95be42-1bf6-421c-ad1f-9f42aab6ccbf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-33fb5209-b612-413c-965e-f3b22dc10140' class='xr-var-data-in' type='checkbox'><label for='data-33fb5209-b612-413c-965e-f3b22dc10140' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2697520.142522, -2694520.142522, -2691520.142522, ...,  2690479.857478,
+        2693479.857478,  2696479.857478])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_y_coordinate</span></div><div class='xr-var-dims'>(projection_y_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.587e+06 -1.584e+06 ... 1.587e+06</div><input id='attrs-1703175c-b292-43ca-afc6-83ad421553c2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1703175c-b292-43ca-afc6-83ad421553c2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-32b5265c-32d6-4198-8826-781028a4f535' class='xr-var-data-in' type='checkbox'><label for='data-32b5265c-32d6-4198-8826-781028a4f535' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-1587306.152557, -1584306.152557, -1581306.152557, ...,  1580693.847443,
+        1583693.847443,  1586693.847443])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-0e702f81-34e3-4b9d-8387-43c35dffb63f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0e702f81-34e3-4b9d-8387-43c35dffb63f' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TMP</span></div><div class='xr-var-dims'>(projection_y_coordinate, projection_x_coordinate)</div><div class='xr-var-dtype'>float16</div><div class='xr-var-preview xr-preview'>298.5 298.5 298.5 ... 291.8 291.8</div><input id='attrs-53702cd8-f49c-4267-a544-5c29bb2c225d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-53702cd8-f49c-4267-a544-5c29bb2c225d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e59ee48c-5ddf-46f4-adb1-1e7c9225a0d1' class='xr-var-data-in' type='checkbox'><label for='data-e59ee48c-5ddf-46f4-adb1-1e7c9225a0d1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>GRIB_PARAM :</span></dt><dd>[2, 0, 0, 0]</dd><dt><span>coordinates :</span></dt><dd>forecast_period pressure height time forecast_reference_time</dd><dt><span>long_name :</span></dt><dd>surface/TMP</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>array([[298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.5],
        [298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.2],
        [298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.2],
        ...,
        [289.8, 289.8, 289.8, ..., 291.5, 291.5, 291.8],
        [289.8, 289.8, 289.8, ..., 291.5, 291.5, 291.8],
-       [289.8, 289.8, 289.8, ..., 291.5, 291.8, 291.8]], dtype=float16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_period</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>timedelta64[ns]</div><div class='xr-var-preview xr-preview'>00:00:00</div><input id='attrs-8ecfa4b8-5adf-4be0-9ebb-99df3ac0f0c4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8ecfa4b8-5adf-4be0-9ebb-99df3ac0f0c4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-36246431-37e0-415f-90ce-5cd0bf82b29f' class='xr-var-data-in' type='checkbox'><label for='data-36246431-37e0-415f-90ce-5cd0bf82b29f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class='xr-var-data'><pre>array(0, dtype=&#x27;timedelta64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_reference_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-5908b2c8-5260-4579-ba68-8d1fb43c7a4f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5908b2c8-5260-4579-ba68-8d1fb43c7a4f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-18dd7f49-9007-4761-9f10-ed623dcd054e' class='xr-var-data-in' type='checkbox'><label for='data-18dd7f49-9007-4761-9f10-ed623dcd054e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>height</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+03</div><input id='attrs-888fb708-4908-4998-a65e-48989251f80b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-888fb708-4908-4998-a65e-48989251f80b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-802bcb5e-6c93-4645-bd46-e42947cedbfe' class='xr-var-data-in' type='checkbox'><label for='data-802bcb5e-6c93-4645-bd46-e42947cedbfe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array(1000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pressure</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.5e+04</div><input id='attrs-77c9362b-a075-4953-a668-db2ddaebbc31' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-77c9362b-a075-4953-a668-db2ddaebbc31' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-85552d58-eeff-4da5-a056-b0c685ee916f' class='xr-var-data-in' type='checkbox'><label for='data-85552d58-eeff-4da5-a056-b0c685ee916f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd></dl></div><div class='xr-var-data'><pre>array(25000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-ab629385-f61c-4874-bfd9-860848c1bb5a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ab629385-f61c-4874-bfd9-860848c1bb5a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-317e1354-03f9-4b42-bf8b-545c2f627a56' class='xr-var-data-in' type='checkbox'><label for='data-317e1354-03f9-4b42-bf8b-545c2f627a56' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6f310878-07f5-4341-8f9c-3b235cf84aba' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6f310878-07f5-4341-8f9c-3b235cf84aba' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [289.8, 289.8, 289.8, ..., 291.5, 291.8, 291.8]], dtype=float16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_period</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>timedelta64[ns]</div><div class='xr-var-preview xr-preview'>00:00:00</div><input id='attrs-c369bf7c-a1eb-4a11-ae20-3eee1ee2e84c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c369bf7c-a1eb-4a11-ae20-3eee1ee2e84c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5234590d-1d32-4778-be2b-0b73b36d9a9f' class='xr-var-data-in' type='checkbox'><label for='data-5234590d-1d32-4778-be2b-0b73b36d9a9f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class='xr-var-data'><pre>array(0, dtype=&#x27;timedelta64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_reference_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-2908376a-37e6-4964-a99b-502b4c713c2a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2908376a-37e6-4964-a99b-502b4c713c2a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8bd55b5d-6d5c-4216-8f8d-eb3d42109fb5' class='xr-var-data-in' type='checkbox'><label for='data-8bd55b5d-6d5c-4216-8f8d-eb3d42109fb5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>height</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+03</div><input id='attrs-eafa00d4-4fca-4b23-8a9e-254228a4e6f2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-eafa00d4-4fca-4b23-8a9e-254228a4e6f2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a5481156-f8ad-45d7-9bbf-0b714f78b8bf' class='xr-var-data-in' type='checkbox'><label for='data-a5481156-f8ad-45d7-9bbf-0b714f78b8bf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array(1000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pressure</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.5e+04</div><input id='attrs-d6a6aa84-9009-45bf-885c-09c654eec482' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d6a6aa84-9009-45bf-885c-09c654eec482' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e9926a68-9c64-4fe2-ae2e-8ad497e9da56' class='xr-var-data-in' type='checkbox'><label for='data-e9926a68-9c64-4fe2-ae2e-8ad497e9da56' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd></dl></div><div class='xr-var-data'><pre>array(25000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-ef180a27-4fae-4bc1-9645-e0fa5326039c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ef180a27-4fae-4bc1-9645-e0fa5326039c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-662b09bd-9a74-4112-9b86-17ff673e028e' class='xr-var-data-in' type='checkbox'><label for='data-662b09bd-9a74-4112-9b86-17ff673e028e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-56f67ec7-d80b-42c7-ac87-74881dd46906' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-56f67ec7-d80b-42c7-ac87-74881dd46906' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Above we used the <code class="docutils literal notranslate"><span class="pre">storage_options</span></code> argument to tell Intake how to access data on AWS. In this case we accessed the data as an anonymous user.</p>
-<p>When you use Intake’s <code class="docutils literal notranslate"><span class="pre">open_{driver}</span></code> function, it creates a catalog entry for the source. You can view the yaml using the source’s <code class="docutils literal notranslate"><span class="pre">yaml</span></code> function.</p>
+<p>When you use Intake’s <code class="docutils literal notranslate"><span class="pre">open_{driver}</span></code> methods, it creates a catalog entry for the source. You can view the yaml using the source’s <code class="docutils literal notranslate"><span class="pre">yaml</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">yaml</span><span class="p">())</span>
@@ -920,7 +920,7 @@ Data variables:
 <div class="section" id="modifying-the-source">
 <h3>Modifying the Source<a class="headerlink" href="#modifying-the-source" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>If we wanted we could add this yaml to our catalog and we could then load this data using Intake. However, there are many datasets we can load from the Zarr store with almost the same catalog entry. Making a separate entry for each would make the catalog cluttered and harder to use. Instead we will generalize this catalog entry so it applies to many datasets. Then we will create user parameters to give the catalog user the abillity to select the data they want.</p>
-<p>To generalize the source we need Intake to dynamically generate urls pointing to the Zarr arrays based off user set parameters. We will take the source created by the <code class="docutils literal notranslate"><span class="pre">open_zarr</span></code> function convert it to a python dictionary and then modify it to include user parameters. We can then use those parameters to generate the urls. Intake provides Jinja templating in catalogs to make this simple. Let’s start by defining user parameters.</p>
+<p>To generalize the source we need Intake to dynamically generate urls pointing to the Zarr arrays based off user set parameters. We will take the source created by the <code class="docutils literal notranslate"><span class="pre">open_zarr</span></code> method convert it to a python dictionary and then modify it to include user parameters. We can then use those parameters to generate the urls. Intake provides Jinja templating in catalogs to make this simple. Let’s start by defining user parameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">source_dict</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">yaml</span><span class="p">(),</span> <span class="n">Loader</span><span class="o">=</span><span class="n">yaml</span><span class="o">.</span><span class="n">CLoader</span><span class="p">)</span>
@@ -1247,11 +1247,13 @@ hrrrzarr:
 </div>
 </div>
 </div>
-<p>Your source now points to a inventory.csv file in the same directory as your catalog. Be sure to copy the file into your “intake_demo” directory.</p>
-<p>Now that we have a source and a data dictionary to describe it lets add a readme to our catalog to explain how to use it and give some usage examples. This readme will also be displayed as the readme for the repository on Github. In this directory there is an example readme markdown file to use. Go ahead and copy it into the “intake_demo” directory.</p>
+<p>Your source now points to a inventory.csv file in the same directory as your catalog. Be sure to copy the file into your “intake-demo” directory.</p>
+<p>Now that we have a source and a data dictionary to describe it lets add a readme to our catalog to explain how to use it and give some usage examples. This readme will also be displayed as the readme for the repository on Github. In this directory there is an example readme markdown file to use. Go ahead and copy it into the “intake-demo” directory.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">=</span> <span class="n">intake</span><span class="o">.</span><span class="n">open_markdown</span><span class="p">(</span><span class="s1">&#39;README.md&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">md_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;pre&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;details markdown=&#39;1&#39;&gt;</span><span class="se">\n</span><span class="s2">&lt;summary&gt;README&lt;/summary&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;post&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&lt;br&gt;</span><span class="se">\n</span><span class="s2">End of README</span><span class="se">\n</span><span class="s2">&lt;/details&gt;&quot;</span><span class="p">}</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">intake</span><span class="o">.</span><span class="n">open_markdown</span><span class="p">(</span><span class="s1">&#39;README.md&#39;</span><span class="p">,</span> <span class="n">md_kwargs</span><span class="o">=</span><span class="n">md_kwargs</span><span class="p">)</span>
 <span class="n">source</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;readme&#39;</span>
 <span class="n">source</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Learn more about how to use this catalog&#39;</span>
 <span class="n">source</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -1259,8 +1261,86 @@ hrrrzarr:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><h1>Intake Demo Readme</h1>
-<p>This repository was made as a educational resource to learn the Python library Intake. It contains an intake catalog pointing to <a href="https://mesowest.utah.edu/html/hrrr/">Mesowest's HRRR Zarr data</a>.</p>
+<div class="output text_html"><style>
+pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.codehilite .hll { background-color: #ffffcc }
+.codehilite { background: #f8f8f8; }
+.codehilite .c { color: #408080; font-style: italic } /* Comment */
+.codehilite .err { border: 1px solid #FF0000 } /* Error */
+.codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+.codehilite .o { color: #666666 } /* Operator */
+.codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+.codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+.codehilite .gd { color: #A00000 } /* Generic.Deleted */
+.codehilite .ge { font-style: italic } /* Generic.Emph */
+.codehilite .gr { color: #FF0000 } /* Generic.Error */
+.codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #00A000 } /* Generic.Inserted */
+.codehilite .go { color: #888888 } /* Generic.Output */
+.codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.codehilite .gs { font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.codehilite .gt { color: #0044DD } /* Generic.Traceback */
+.codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+.codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #B00040 } /* Keyword.Type */
+.codehilite .m { color: #666666 } /* Literal.Number */
+.codehilite .s { color: #BA2121 } /* Literal.String */
+.codehilite .na { color: #7D9029 } /* Name.Attribute */
+.codehilite .nb { color: #008000 } /* Name.Builtin */
+.codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.codehilite .no { color: #880000 } /* Name.Constant */
+.codehilite .nd { color: #AA22FF } /* Name.Decorator */
+.codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.codehilite .nf { color: #0000FF } /* Name.Function */
+.codehilite .nl { color: #A0A000 } /* Name.Label */
+.codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #19177C } /* Name.Variable */
+.codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+.codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+.codehilite .mf { color: #666666 } /* Literal.Number.Float */
+.codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+.codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+.codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+.codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+.codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+.codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+.codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+.codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.codehilite .sx { color: #008000 } /* Literal.String.Other */
+.codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+.codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+.codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+.codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+.codehilite .vc { color: #19177C } /* Name.Variable.Class */
+.codehilite .vg { color: #19177C } /* Name.Variable.Global */
+.codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+.codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+.codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+<details>
+<summary>README</summary>
+<h1>Intake Demo Readme</h1>
+<p>This repository was made as a educational resource to learn the Python library Intake. It contains an intake catalog pointing to <a href="https://mesowest.utah.edu/html/hrrr/">Mesowest's High-Resolution Rapid Refresh (HRRR) Zarr data</a>.</p>
 <h2>Dependencies</h2>
 <ul>
 <li>requests</li>
@@ -1269,13 +1349,45 @@ hrrrzarr:
 <li>s3fs</li>
 <li>Intake-xarray</li>
 <li>Intake-markdown</li>
-<li>metpy</li>
 <li>cartopy</li>
 </ul>
+<h3>About the Data</h3>
+<p>High-Resolution Rapid Refresh (HRRR) is a atmospheric model maintained by <a href="https://www.noaa.gov/">NOAA</a>. As stated on NOAA's <a href="https://rapidrefresh.noaa.gov/hrrr/">website</a></p>
+<blockquote>
+<p>The HRRR is a NOAA real-time 3-km resolution, hourly updated, cloud-resolving, convection-allowing atmospheric model, initialized by 3km grids with 3km radar assimilation. Radar data is
+assimilated in the HRRR every 15 min over a 1-h period adding further detail to that provided by the hourly data assimilation from the 13km radar-enhanced Rapid Refresh.</p>
+</blockquote>
+<p>In this cookbook we use a subset of HRRR data maintained by Mesowest on AWS S3 object storage. </p>
+<h2>HRRR Projection</h2>
+<p>From Mesowest's <a href="https://mesowest.utah.edu/html/hrrr/zarr_documentation/html/python_data_loading.html">HRRR Zarr Data Loading Guide</a></p>
+<blockquote>
+The projection description for the spatial grid, which is stored in the HRRR grib2 files, is not available directly in the zarr arrays. Additionally, the zarr data has the x and y coordinates in the native Lambert Conformal Conic projection, but not the latitude and longitude data. The various use cases will have more specific examples of how to handle this information, but here we'll note that:
+
+    The proj params you need to define the grid correctly are:
+
+  {'a': 6371229,
+   'b': 6371229,
+   'proj': 'lcc',
+   'lon_0': 262.5,
+   'lat_0': 38.5,
+   'lat_1': 38.5,
+   'lat_2': 38.5}
+
+    We also offer a "chunk index" that has the latitude and longitude coordinates for the grid, more on that under Use Case 3.
+
+    The following code sets up the correct CRS in cartopy:
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="n">projection</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mf">262.5</span><span class="p">,</span> 
+                                   <span class="n">central_latitude</span><span class="o">=</span><span class="mf">38.5</span><span class="p">,</span> 
+                                   <span class="n">standard_parallels</span><span class="o">=</span><span class="p">(</span><span class="mf">38.5</span><span class="p">,</span> <span class="mf">38.5</span><span class="p">),</span>
+                                    <span class="n">globe</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">semimajor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">,</span>
+                                                     <span class="n">semiminor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">))</span>
+</code></pre></div>
+
 <h2>Data Dictionary</h2>
 <p>This catalog contains a csv source called <code>data_dictionary</code> that describes the data in the the hrrrzarr source. The <code>Vertical Level</code> and <code>Parameter Short Name</code> column are arguments that can be passed to the hrrrzarr source's <code>level</code> and <code>param</code> user parameters respectively. </p>
 <h2>Usage Example</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">intake</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">intake</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="n">user_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;top_of_atmosphere&#39;</span><span class="p">,</span>
                    <span class="s1">&#39;param&#39;</span><span class="p">:</span> <span class="s1">&#39;USWRF&#39;</span><span class="p">,</span>
@@ -1287,9 +1399,8 @@ hrrrzarr:
 </code></pre></div>
 
 <h3>Combining a Days Worth of Data</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">intake</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">intake</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">metpy</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
@@ -1300,20 +1411,15 @@ hrrrzarr:
                                    <span class="n">standard_parallels</span><span class="o">=</span><span class="p">(</span><span class="mf">38.5</span><span class="p">,</span> <span class="mf">38.5</span><span class="p">),</span>
                                     <span class="n">globe</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">semimajor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">,</span>
                                                      <span class="n">semiminor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">prepare_dataset</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">projection_x_coordinate</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">projection_y_coordinate</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">metpy</span><span class="o">.</span><span class="n">assign_crs</span><span class="p">(</span><span class="n">projection</span><span class="o">.</span><span class="n">to_cf</span><span class="p">())</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">metpy</span><span class="o">.</span><span class="n">assign_latitude_longitude</span><span class="p">()</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ds</span>
-
 <span class="n">date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span>
-<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">cat</span><span class="o">.</span><span class="n">hrrrzarr</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">hour</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span>
-<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">prepare_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">]</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">cat</span><span class="o">.</span><span class="n">hrrrzarr</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">hour</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="n">hours</span><span class="p">]</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">combine_attrs</span><span class="o">=</span><span class="s2">&quot;drop_conflicts&quot;</span><span class="p">)</span>
-</code></pre></div></div></div>
+</code></pre></div>
+
+<p><br>
+End of README</p>
+</details></div></div>
 </div>
 <p>We will change the urlpath of this source in the same way as the data dictionary to ensure the readme loads correctly.</p>
 <div class="cell docutils container">
@@ -1372,6 +1478,19 @@ hrrrzarr:
         type: str
   readme:
     args:
+      md_kwargs:
+        post: &#39;
+
+          &lt;br&gt;
+
+          End of README
+
+          &lt;/details&gt;&#39;
+        pre: &#39;&lt;details markdown=&#39;&#39;1&#39;&#39;&gt;
+
+          &lt;summary&gt;README&lt;/summary&gt;
+
+          &#39;
       urlpath: &#39;{{ CATALOG_DIR }}/README.md&#39;
     description: Learn more about how to use this catalog
     driver: intake_markdown.intake_markdown.MarkdownSource
@@ -1384,13 +1503,13 @@ hrrrzarr:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">catalog</span><span class="p">[</span><span class="s1">&#39;sources&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sources</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;intake_demo/catalog.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;intake-demo/catalog.yml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">catalog</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>At this point you should have three files in your “intake_demo” directory: “catalog.yml”, “inventory.csv”, and “README.md”. All we need to do now is commit our changes and push them to Github.</p>
+<p>At this point you should have three files in your “intake-demo” directory: “catalog.yml”, “inventory.csv”, and “README.md”. All we need to do now is commit our changes and push them to Github.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add .
 git commit -m <span class="s2">&quot;initial commit&quot;</span>
 git push
@@ -1402,7 +1521,7 @@ git push
 <p>Now that your catalog is on Github let’s try using it. In the cell below replace <code class="docutils literal notranslate"><span class="pre">jnmorley</span></code> with your own github username.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">intake</span><span class="o">.</span><span class="n">open_catalog</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jnmorley/intake_demo/main/catalog.yml&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">intake</span><span class="o">.</span><span class="n">open_catalog</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/jnmorley/intake-demo/main/catalog.yml&#39;</span><span class="p">)</span>
 <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1420,8 +1539,86 @@ git push
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><h1>Intake Demo Readme</h1>
-<p>This repository was made as a educational resource to learn the Python library Intake. It contains an intake catalog pointing to <a href="https://mesowest.utah.edu/html/hrrr/">Mesowest's HRRR Zarr data</a>.</p>
+<div class="output text_html"><style>
+pre { line-height: 125%; margin: 0; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.codehilite .hll { background-color: #ffffcc }
+.codehilite { background: #f8f8f8; }
+.codehilite .c { color: #408080; font-style: italic } /* Comment */
+.codehilite .err { border: 1px solid #FF0000 } /* Error */
+.codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+.codehilite .o { color: #666666 } /* Operator */
+.codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+.codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+.codehilite .gd { color: #A00000 } /* Generic.Deleted */
+.codehilite .ge { font-style: italic } /* Generic.Emph */
+.codehilite .gr { color: #FF0000 } /* Generic.Error */
+.codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #00A000 } /* Generic.Inserted */
+.codehilite .go { color: #888888 } /* Generic.Output */
+.codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.codehilite .gs { font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.codehilite .gt { color: #0044DD } /* Generic.Traceback */
+.codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+.codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #B00040 } /* Keyword.Type */
+.codehilite .m { color: #666666 } /* Literal.Number */
+.codehilite .s { color: #BA2121 } /* Literal.String */
+.codehilite .na { color: #7D9029 } /* Name.Attribute */
+.codehilite .nb { color: #008000 } /* Name.Builtin */
+.codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.codehilite .no { color: #880000 } /* Name.Constant */
+.codehilite .nd { color: #AA22FF } /* Name.Decorator */
+.codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.codehilite .nf { color: #0000FF } /* Name.Function */
+.codehilite .nl { color: #A0A000 } /* Name.Label */
+.codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #19177C } /* Name.Variable */
+.codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+.codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+.codehilite .mf { color: #666666 } /* Literal.Number.Float */
+.codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+.codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+.codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+.codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+.codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+.codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+.codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+.codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.codehilite .sx { color: #008000 } /* Literal.String.Other */
+.codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+.codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+.codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+.codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+.codehilite .vc { color: #19177C } /* Name.Variable.Class */
+.codehilite .vg { color: #19177C } /* Name.Variable.Global */
+.codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+.codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+.codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
+<details>
+<summary>README</summary>
+<h1>Intake Demo Readme</h1>
+<p>This repository was made as a educational resource to learn the Python library Intake. It contains an intake catalog pointing to <a href="https://mesowest.utah.edu/html/hrrr/">Mesowest's High-Resolution Rapid Refresh (HRRR) Zarr data</a>.</p>
 <h2>Dependencies</h2>
 <ul>
 <li>requests</li>
@@ -1430,13 +1627,45 @@ git push
 <li>s3fs</li>
 <li>Intake-xarray</li>
 <li>Intake-markdown</li>
-<li>metpy</li>
 <li>cartopy</li>
 </ul>
+<h3>About the Data</h3>
+<p>High-Resolution Rapid Refresh (HRRR) is a atmospheric model maintained by <a href="https://www.noaa.gov/">NOAA</a>. As stated on NOAA's <a href="https://rapidrefresh.noaa.gov/hrrr/">website</a></p>
+<blockquote>
+<p>The HRRR is a NOAA real-time 3-km resolution, hourly updated, cloud-resolving, convection-allowing atmospheric model, initialized by 3km grids with 3km radar assimilation. Radar data is
+assimilated in the HRRR every 15 min over a 1-h period adding further detail to that provided by the hourly data assimilation from the 13km radar-enhanced Rapid Refresh.</p>
+</blockquote>
+<p>In this cookbook we use a subset of HRRR data maintained by Mesowest on AWS S3 object storage. </p>
+<h2>HRRR Projection</h2>
+<p>From Mesowest's <a href="https://mesowest.utah.edu/html/hrrr/zarr_documentation/html/python_data_loading.html">HRRR Zarr Data Loading Guide</a></p>
+<blockquote>
+The projection description for the spatial grid, which is stored in the HRRR grib2 files, is not available directly in the zarr arrays. Additionally, the zarr data has the x and y coordinates in the native Lambert Conformal Conic projection, but not the latitude and longitude data. The various use cases will have more specific examples of how to handle this information, but here we'll note that:
+
+    The proj params you need to define the grid correctly are:
+
+  {'a': 6371229,
+   'b': 6371229,
+   'proj': 'lcc',
+   'lon_0': 262.5,
+   'lat_0': 38.5,
+   'lat_1': 38.5,
+   'lat_2': 38.5}
+
+    We also offer a "chunk index" that has the latitude and longitude coordinates for the grid, more on that under Use Case 3.
+
+    The following code sets up the correct CRS in cartopy:
+</blockquote>
+<div class="codehilite"><pre><span></span><code><span class="n">projection</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">LambertConformal</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mf">262.5</span><span class="p">,</span> 
+                                   <span class="n">central_latitude</span><span class="o">=</span><span class="mf">38.5</span><span class="p">,</span> 
+                                   <span class="n">standard_parallels</span><span class="o">=</span><span class="p">(</span><span class="mf">38.5</span><span class="p">,</span> <span class="mf">38.5</span><span class="p">),</span>
+                                    <span class="n">globe</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">semimajor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">,</span>
+                                                     <span class="n">semiminor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">))</span>
+</code></pre></div>
+
 <h2>Data Dictionary</h2>
 <p>This catalog contains a csv source called <code>data_dictionary</code> that describes the data in the the hrrrzarr source. The <code>Vertical Level</code> and <code>Parameter Short Name</code> column are arguments that can be passed to the hrrrzarr source's <code>level</code> and <code>param</code> user parameters respectively. </p>
 <h2>Usage Example</h2>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">intake</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">intake</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="n">user_parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;top_of_atmosphere&#39;</span><span class="p">,</span>
                    <span class="s1">&#39;param&#39;</span><span class="p">:</span> <span class="s1">&#39;USWRF&#39;</span><span class="p">,</span>
@@ -1448,9 +1677,8 @@ git push
 </code></pre></div>
 
 <h3>Combining a Days Worth of Data</h3>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">intake</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">intake</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">metpy</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
@@ -1461,20 +1689,15 @@ git push
                                    <span class="n">standard_parallels</span><span class="o">=</span><span class="p">(</span><span class="mf">38.5</span><span class="p">,</span> <span class="mf">38.5</span><span class="p">),</span>
                                     <span class="n">globe</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Globe</span><span class="p">(</span><span class="n">semimajor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">,</span>
                                                      <span class="n">semiminor_axis</span><span class="o">=</span><span class="mi">6371229</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">finesse_dataset</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">projection_x_coordinate</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">projection_y_coordinate</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">metpy</span><span class="o">.</span><span class="n">assign_crs</span><span class="p">(</span><span class="n">projection</span><span class="o">.</span><span class="n">to_cf</span><span class="p">())</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">metpy</span><span class="o">.</span><span class="n">assign_latitude_longitude</span><span class="p">()</span>
-    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">ds</span>
-
 <span class="n">date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)]</span>
-<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">cat</span><span class="o">.</span><span class="n">hrrrzarr</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">hour</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="n">dates</span><span class="p">]</span>
-<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">finesse_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span> <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">]</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="p">[</span><span class="n">date</span> <span class="o">+</span> <span class="n">dt</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">datasets</span> <span class="o">=</span> <span class="p">[</span><span class="n">cat</span><span class="o">.</span><span class="n">hrrrzarr</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="n">hour</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">hour</span> <span class="ow">in</span> <span class="n">hours</span><span class="p">]</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">datasets</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">combine_attrs</span><span class="o">=</span><span class="s2">&quot;drop_conflicts&quot;</span><span class="p">)</span>
-</code></pre></div></div></div>
+</code></pre></div>
+
+<p><br>
+End of README</p>
+</details></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1996,15 +2219,15 @@ Data variables:
     forecast_reference_time  datetime64[ns] 2016-08-24
     height                   float64 1e+03
     pressure                 float64 2.5e+04
-    time                     datetime64[ns] 2016-08-24</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-4c43fe34-b2f0-428e-87ac-0ae2f266880e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4c43fe34-b2f0-428e-87ac-0ae2f266880e' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>projection_x_coordinate</span>: 1799</li><li><span class='xr-has-index'>projection_y_coordinate</span>: 1059</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-8faca1f2-7e32-4056-a418-310b9e394561' class='xr-section-summary-in' type='checkbox'  checked><label for='section-8faca1f2-7e32-4056-a418-310b9e394561' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_x_coordinate</span></div><div class='xr-var-dims'>(projection_x_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.698e+06 -2.695e+06 ... 2.696e+06</div><input id='attrs-625dab8d-e16f-44b4-93b2-344e7957f4a1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-625dab8d-e16f-44b4-93b2-344e7957f4a1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e8f86de7-10b2-415a-8ccb-90ce8393f5a2' class='xr-var-data-in' type='checkbox'><label for='data-e8f86de7-10b2-415a-8ccb-90ce8393f5a2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2697520.142522, -2694520.142522, -2691520.142522, ...,  2690479.857478,
-        2693479.857478,  2696479.857478])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_y_coordinate</span></div><div class='xr-var-dims'>(projection_y_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.587e+06 -1.584e+06 ... 1.587e+06</div><input id='attrs-aedecff8-8666-4136-9489-9ff29c4a5587' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-aedecff8-8666-4136-9489-9ff29c4a5587' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e39dbb3b-379a-4772-84b7-d87d4da7808b' class='xr-var-data-in' type='checkbox'><label for='data-e39dbb3b-379a-4772-84b7-d87d4da7808b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-1587306.152557, -1584306.152557, -1581306.152557, ...,  1580693.847443,
-        1583693.847443,  1586693.847443])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a8c8ec2a-a6ab-4ceb-9480-182175ec4754' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a8c8ec2a-a6ab-4ceb-9480-182175ec4754' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TMP</span></div><div class='xr-var-dims'>(projection_y_coordinate, projection_x_coordinate)</div><div class='xr-var-dtype'>float16</div><div class='xr-var-preview xr-preview'>298.5 298.5 298.5 ... 291.8 291.8</div><input id='attrs-83cb2a4e-d5ca-41cf-91e2-5505b8291d1b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-83cb2a4e-d5ca-41cf-91e2-5505b8291d1b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0b758b75-b0c3-4afb-ac20-3c47bd4c6575' class='xr-var-data-in' type='checkbox'><label for='data-0b758b75-b0c3-4afb-ac20-3c47bd4c6575' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>GRIB_PARAM :</span></dt><dd>[2, 0, 0, 0]</dd><dt><span>coordinates :</span></dt><dd>forecast_period pressure height time forecast_reference_time</dd><dt><span>long_name :</span></dt><dd>surface/TMP</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>array([[298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.5],
+    time                     datetime64[ns] 2016-08-24</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-efcbcc65-28a7-40ca-b9d5-2ab49b013c94' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-efcbcc65-28a7-40ca-b9d5-2ab49b013c94' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>projection_x_coordinate</span>: 1799</li><li><span class='xr-has-index'>projection_y_coordinate</span>: 1059</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-0b4e7fbd-9276-4b89-b63d-9eabaca0c99c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-0b4e7fbd-9276-4b89-b63d-9eabaca0c99c' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_x_coordinate</span></div><div class='xr-var-dims'>(projection_x_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.698e+06 -2.695e+06 ... 2.696e+06</div><input id='attrs-58e74309-8698-4b88-92c4-5ad8d618171a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-58e74309-8698-4b88-92c4-5ad8d618171a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-98cbcd26-0155-443e-b8e0-3147610ad97f' class='xr-var-data-in' type='checkbox'><label for='data-98cbcd26-0155-443e-b8e0-3147610ad97f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2697520.142522, -2694520.142522, -2691520.142522, ...,  2690479.857478,
+        2693479.857478,  2696479.857478])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_y_coordinate</span></div><div class='xr-var-dims'>(projection_y_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.587e+06 -1.584e+06 ... 1.587e+06</div><input id='attrs-0e21ee0a-3fd3-437b-8633-09cc82117780' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0e21ee0a-3fd3-437b-8633-09cc82117780' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2886cbf8-0685-4440-83b1-07ba4f06c18a' class='xr-var-data-in' type='checkbox'><label for='data-2886cbf8-0685-4440-83b1-07ba4f06c18a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-1587306.152557, -1584306.152557, -1581306.152557, ...,  1580693.847443,
+        1583693.847443,  1586693.847443])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-21e54863-e634-4587-9497-0de8799c7197' class='xr-section-summary-in' type='checkbox'  checked><label for='section-21e54863-e634-4587-9497-0de8799c7197' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TMP</span></div><div class='xr-var-dims'>(projection_y_coordinate, projection_x_coordinate)</div><div class='xr-var-dtype'>float16</div><div class='xr-var-preview xr-preview'>298.5 298.5 298.5 ... 291.8 291.8</div><input id='attrs-0424ac81-d8d6-46fa-830d-9397af98bd59' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0424ac81-d8d6-46fa-830d-9397af98bd59' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aab35140-8366-4ccf-a106-9e96e6b5b975' class='xr-var-data-in' type='checkbox'><label for='data-aab35140-8366-4ccf-a106-9e96e6b5b975' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>GRIB_PARAM :</span></dt><dd>[2, 0, 0, 0]</dd><dt><span>coordinates :</span></dt><dd>forecast_period pressure height time forecast_reference_time</dd><dt><span>long_name :</span></dt><dd>surface/TMP</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>array([[298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.5],
        [298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.2],
        [298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.2],
        ...,
        [289.8, 289.8, 289.8, ..., 291.5, 291.5, 291.8],
        [289.8, 289.8, 289.8, ..., 291.5, 291.5, 291.8],
-       [289.8, 289.8, 289.8, ..., 291.5, 291.8, 291.8]], dtype=float16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_period</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>timedelta64[ns]</div><div class='xr-var-preview xr-preview'>00:00:00</div><input id='attrs-5b15030f-694d-40ae-a2a1-33c1bd845e6e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5b15030f-694d-40ae-a2a1-33c1bd845e6e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-93963940-3a1f-4ace-b6d0-38f0a8471fc6' class='xr-var-data-in' type='checkbox'><label for='data-93963940-3a1f-4ace-b6d0-38f0a8471fc6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class='xr-var-data'><pre>array(0, dtype=&#x27;timedelta64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_reference_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-42e2c588-02a8-4f92-80f1-19f2cc9d8087' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-42e2c588-02a8-4f92-80f1-19f2cc9d8087' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b42fda94-638f-4622-bf6d-442706987b32' class='xr-var-data-in' type='checkbox'><label for='data-b42fda94-638f-4622-bf6d-442706987b32' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>height</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+03</div><input id='attrs-a343deab-0afa-483a-8034-66cd53bc8a05' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a343deab-0afa-483a-8034-66cd53bc8a05' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2e257b90-b4b7-48a8-a12e-23a973f62b2e' class='xr-var-data-in' type='checkbox'><label for='data-2e257b90-b4b7-48a8-a12e-23a973f62b2e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array(1000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pressure</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.5e+04</div><input id='attrs-b3584984-5cc9-4cda-85c7-ca67d3a84029' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b3584984-5cc9-4cda-85c7-ca67d3a84029' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-11e7014b-a34f-4789-a9f9-3f49547f032f' class='xr-var-data-in' type='checkbox'><label for='data-11e7014b-a34f-4789-a9f9-3f49547f032f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd></dl></div><div class='xr-var-data'><pre>array(25000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-3ea71988-ea18-4692-8ea7-85e59f89b18b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3ea71988-ea18-4692-8ea7-85e59f89b18b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b10b0008-e9e9-4ac3-9fc0-ac61048a6843' class='xr-var-data-in' type='checkbox'><label for='data-b10b0008-e9e9-4ac3-9fc0-ac61048a6843' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-36b1133d-be9e-4d2e-adb4-59270ecfd3bd' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-36b1133d-be9e-4d2e-adb4-59270ecfd3bd' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+       [289.8, 289.8, 289.8, ..., 291.5, 291.8, 291.8]], dtype=float16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_period</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>timedelta64[ns]</div><div class='xr-var-preview xr-preview'>00:00:00</div><input id='attrs-d433fb2f-2a56-4054-a17f-99a1a99dadf2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d433fb2f-2a56-4054-a17f-99a1a99dadf2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-59dc781e-68ef-4bf2-8f9c-bafa072a19dd' class='xr-var-data-in' type='checkbox'><label for='data-59dc781e-68ef-4bf2-8f9c-bafa072a19dd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class='xr-var-data'><pre>array(0, dtype=&#x27;timedelta64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_reference_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-fca642c5-60f9-4e9e-8a46-58b0ec307c57' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fca642c5-60f9-4e9e-8a46-58b0ec307c57' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7e955de1-8103-4c20-9479-60b11662b5c7' class='xr-var-data-in' type='checkbox'><label for='data-7e955de1-8103-4c20-9479-60b11662b5c7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>height</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+03</div><input id='attrs-bd94d61f-182e-4503-aff7-9a55ab564e21' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bd94d61f-182e-4503-aff7-9a55ab564e21' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9ee34d01-2363-49e5-aa48-7f15132b8d26' class='xr-var-data-in' type='checkbox'><label for='data-9ee34d01-2363-49e5-aa48-7f15132b8d26' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array(1000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pressure</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.5e+04</div><input id='attrs-d5c5f053-132c-4531-abd3-9ecb444dc2e9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d5c5f053-132c-4531-abd3-9ecb444dc2e9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-38b94b72-46f7-4cc1-85f7-141932ad0c16' class='xr-var-data-in' type='checkbox'><label for='data-38b94b72-46f7-4cc1-85f7-141932ad0c16' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd></dl></div><div class='xr-var-data'><pre>array(25000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-3fa85dd8-cdc7-4508-ac02-60bbb8e6dec3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3fa85dd8-cdc7-4508-ac02-60bbb8e6dec3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d601c9ed-ad87-4811-a851-98bc54e7abf5' class='xr-var-data-in' type='checkbox'><label for='data-d601c9ed-ad87-4811-a851-98bc54e7abf5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-cfea12a8-10ea-47e0-8b30-53892480008b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-cfea12a8-10ea-47e0-8b30-53892480008b' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 </div>
 <hr class="docutils" />
@@ -2098,7 +2321,7 @@ Data variables:
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 11 July 2022.
+          Last updated on 14 July 2022.
         </p>
       </div>
     </div>
