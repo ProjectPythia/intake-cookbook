@@ -16,4 +16,4 @@ dependencies:
   - aiohttp
   - pip:
       - sphinx-pythia-theme
-      - git+https://git@github.com/jnmorley/intake-markdown.git
+      - intake-markdown
