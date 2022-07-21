@@ -1,17 +1,22 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Project Pythia Cookbook Template
+title: Intake Cookbook
 author: the <a href="https://projectpythia.org/">Project Pythia</a> Community
 logo: notebooks/images/logos/pythia_logo-white-rtext.svg
 email: projectpythia@ucar.edu
 copyright: '2022'
 
-description: A sample cookbook description.
+description: This cookbook shows examples of using and creating Intake catalogs to access data.
 thumbnail: thumbnail.png
 tags:
   domains:
+   - Data access
   packages:
+   - intake
+   - intake-xarray
+   - intake-markdown
+   
 
 # Execute the notebooks upon build
 execute:
