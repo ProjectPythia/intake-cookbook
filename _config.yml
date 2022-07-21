@@ -16,7 +16,6 @@ tags:
    - intake
    - intake-xarray
    - intake-markdown
-   
 
 # Execute the notebooks upon build
 execute:
