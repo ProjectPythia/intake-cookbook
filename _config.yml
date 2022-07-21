@@ -13,7 +13,7 @@ tags:
   domains: 
     - sampledomain
   packages: 
-    - sample-package
+    - samplepackage
 
 # Execute the notebooks upon build
 execute:
