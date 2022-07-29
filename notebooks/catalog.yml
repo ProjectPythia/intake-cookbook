@@ -1,0 +1,67 @@
+metadata:
+  description: Catalog containing Mesowest's HRRR data. See readme source for more
+    information.
+  version: 1
+sources:
+  data_dictionary:
+    args:
+      csv_kwargs:
+        keep_default_na: false
+      urlpath: '{{ CATALOG_DIR }}/inventory.csv'
+    description: Describes the data in the hrrrzarr source
+    driver: intake.source.csv.CSVSource
+    metadata: {}
+  hrrrzarr:
+    args:
+      chunks:
+        projection_x_coordinate: 1799
+        projection_y_coordinate: 1059
+      storage_options:
+        anon: true
+      urlpath:
+      - s3://hrrrzarr/sfc/{{date.strftime('%Y%m%d/%Y%m%d_%Hz_anl.zarr')}}/{{level}}/{{param}}
+      - s3://hrrrzarr/sfc/{{date.strftime('%Y%m%d/%Y%m%d_%Hz_anl.zarr')}}/{{level}}/{{param}}/{{level}}
+    description: Mesowest's HRRR data. See readme source for more information.
+    driver: intake_xarray.xzarr.ZarrSource
+    metadata:
+      coords: !!python/tuple
+      - projection_x_coordinate
+      - projection_y_coordinate
+      dims:
+        projection_x_coordinate: 1799
+        projection_y_coordinate: 1059
+    parameters:
+      date:
+        default: '2016-08-24T00:00:00'
+        description: Date and hour of data.
+        min: '2016-08-24T00:00:00'
+        type: datetime
+      level:
+        default: surface
+        description: Parameter specifying level in the atmosphere. Corresponds to
+          'Vertical Level' column in data_dictionary
+        type: str
+      param:
+        default: TMP
+        description: Specifies what parameter your dataset will contain. Corresponds
+          to 'Parameter Short Name' in data_dictionary
+        type: str
+  readme:
+    args:
+      md_kwargs:
+        post: '
+
+          <br>
+
+          End of README
+
+          </details>'
+        pre: '<details markdown=''1''>
+
+          <summary>README</summary>
+
+          '
+      urlpath: '{{ CATALOG_DIR }}/README.md'
+    description: Learn more about how to use this catalog
+    driver: intake_markdown.intake_markdown.MarkdownSource
+    metadata: {}
