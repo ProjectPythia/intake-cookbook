@@ -13,9 +13,8 @@ sources:
     metadata: {}
   hrrrzarr:
     args:
-      chunks:
-        projection_x_coordinate: 1799
-        projection_y_coordinate: 1059
+      chunks: null
+      consolidated: true
       storage_options:
         anon: true
       urlpath:
