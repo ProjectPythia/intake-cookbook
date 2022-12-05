@@ -2,8 +2,8 @@
 
 # Intake Cookbook
 
-[![nightly-build](https://github.com/ProjectPythiaCookbooks/intake-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythiaCookbooks/intake-cookbook/actions/workflows/nightly-build.yaml)
-[![Binder](http://binder.mypythia.org/badge_logo.svg)](http://binder.mypythia.org/v2/gh/ProjectPythiaCookbooks/intake-cookbook/main?labpath=notebooks)
+[![nightly-build](https://github.com/ProjectPythia/intake-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/intake-cookbook/actions/workflows/nightly-build.yaml)
+[![Binder](http://binder.mypythia.org/badge_logo.svg)](http://binder.mypythia.org/v2/gh/ProjectPythia/intake-cookbook/main?labpath=notebooks)
 
 This Project Pythia Cookbook covers using and creating Intake catalogs to access data.
 
@@ -17,8 +17,8 @@ This cookbook will help simplify the way you access and share data in your resea
 
 ### Contributors
 
-<a href="https://github.com/ProjectPythiaCookbooks/intake-cookbook/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ProjectPythiaCookbooks/intake-cookbook" />
+<a href="https://github.com/ProjectPythia/intake-cookbook/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ProjectPythia/intake-cookbook" />
 </a>
 
 ## Structure
@@ -62,10 +62,10 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
   
 
-1. Clone the `https://github.com/ProjectPythiaCookbooks/intake-cookbook` repository:
+1. Clone the `https://github.com/ProjectPythia/intake-cookbook` repository:
 
    ```bash
-    git clone https://github.com/ProjectPythiaCookbooks/intake-cookbook.git
+    git clone https://github.com/ProjectPythia/intake-cookbook.git
     ```  
 1. Move into the `intake-cookbook` directory
     ```bash
