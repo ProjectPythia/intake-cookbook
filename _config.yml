@@ -8,7 +8,7 @@ email: projectpythia@ucar.edu
 copyright: '2022'
 
 description: This cookbook shows examples of using and creating Intake catalogs to access data.
-thumbnail: thumbnail.png
+thumbnail: thumbnail.svg
 tags:
   domains:
    - Data access
