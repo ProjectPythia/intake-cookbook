@@ -2,8 +2,8 @@
 
 # Intake Cookbook
 
-[![nightly-build](https://github.com/ProjectPythiaCookbooks/intake-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythiaCookbooks/intake-cookbook/actions/workflows/nightly-build.yaml)
-[![Binder](http://binder.mypythia.org/badge_logo.svg)](http://binder.mypythia.org/v2/gh/ProjectPythiaCookbooks/intake-cookbook/main?labpath=notebooks)
+[![nightly-build](https://github.com/ProjectPythia/intake-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/intake-cookbook/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/intake-cookbook/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/512825541.svg)](https://zenodo.org/badge/latestdoi/512825541)
 
 This Project Pythia Cookbook covers using and creating Intake catalogs to access data.
@@ -18,8 +18,8 @@ This cookbook will help simplify the way you access and share data in your resea
 
 ### Contributors
 
-<a href="https://github.com/ProjectPythiaCookbooks/intake-cookbook/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ProjectPythiaCookbooks/intake-cookbook" />
+<a href="https://github.com/ProjectPythia/intake-cookbook/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ProjectPythia/intake-cookbook" />
 </a>
 
 ## Structure
@@ -40,12 +40,12 @@ This section describes how to use intake catalogs to access data. It shows how t
 This section walks you through the process of creating your own Intake catalogs to access Mesowest's HRRR data.
 
 ## Running the Notebooks
-You can either run the notebook using [Binder](https://mybinder.org/) or on your local machine.
+You can either run the notebook using [Binder](https://binder.projectpythia.org) or on your local machine.
 
 ### Running on Binder
 
 The simplest way to interact with a Jupyter Notebook is through
-[Binder](https://mybinder.org/), which enables the execution of a
+[Binder](https://binder.projectpythia.org), which enables the execution of a
 [Jupyter Book](https://jupyterbook.org) in the cloud. The details of how this works are not
 important for now. All you need to know is how to launch a Pythia
 Cookbooks chapter via Binder. Simply navigate your mouse to
@@ -63,10 +63,10 @@ Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyt
 If you are interested in running this material locally on your computer, you will need to follow this workflow:
   
 
-1. Clone the `https://github.com/ProjectPythiaCookbooks/intake-cookbook` repository:
+1. Clone the `https://github.com/ProjectPythia/intake-cookbook` repository:
 
    ```bash
-    git clone https://github.com/ProjectPythiaCookbooks/intake-cookbook.git
+    git clone https://github.com/ProjectPythia/intake-cookbook.git
     ```  
 1. Move into the `intake-cookbook` directory
     ```bash

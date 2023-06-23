@@ -5,6 +5,7 @@ dependencies:
   - jupyter-book
   - python
   - jupyterlab
+  - jupyter_server<2
   - s3fs
   - intake
   - intake-xarray
