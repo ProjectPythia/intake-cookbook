@@ -4,6 +4,7 @@
 
 [![nightly-build](https://github.com/ProjectPythia/intake-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/intake-cookbook/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/intake-cookbook/main?labpath=notebooks)
+[![DOI](https://zenodo.org/badge/512825541.svg)](https://zenodo.org/badge/latestdoi/512825541)
 
 This Project Pythia Cookbook covers using and creating Intake catalogs to access data.
 
