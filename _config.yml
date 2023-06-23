@@ -4,18 +4,7 @@
 title: Intake Cookbook
 author: James Morley
 logo: notebooks/images/logos/pythia_logo-white-rtext.svg
-email: projectpythia@ucar.edu
 copyright: '2022'
-
-description: This cookbook shows examples of using and creating Intake catalogs to access data.
-thumbnail: thumbnail.svg
-tags:
-  domains:
-   - Data access
-  packages:
-   - intake
-   - intake-xarray
-   - intake-markdown
 
 # Execute the notebooks upon build
 execute:

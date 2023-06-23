@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this cookbook, please cite it as below."
+authors:
+  # add additional entries for each author -- see https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md
+  - family-names: Morley
+    given-names: James
+    orcid: https://orcid.org/0009-0005-5193-7981 # optional
+    website: https://github.com/jnmorley
+  - name: "Intake Cookbook contributors" # use the 'name' field to acknowledge organizations
+    website: "https://github.com/ProjectPythia/intake-cookbook/graphs/contributors"
+title: "Intake Cookbook"
+abstract: "This cookbook shows examples of using and creating Intake catalogs to access data."

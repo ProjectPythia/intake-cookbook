@@ -1,0 +1,8 @@
+thumbnail: thumbnail.png
+tags:
+  domains:
+   - Data access
+  packages:
+   - intake
+   - intake-xarray
+   - intake-markdown
