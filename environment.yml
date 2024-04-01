@@ -15,6 +15,6 @@ dependencies:
   - metpy
   - requests
   - aiohttp
+  - sphinx-pythia-theme
   - pip:
-      - sphinx-pythia-theme
       - intake-markdown
