@@ -9,6 +9,7 @@ dependencies:
   - s3fs
   - intake
   - intake-xarray
+  - numpy<2
   - pip
   - cartopy
   - matplotlib
