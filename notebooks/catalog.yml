@@ -5,8 +5,7 @@ metadata:
 sources:
   data_dictionary:
     args:
-      csv_kwargs:
-        keep_default_na: false
+      keep_default_na: false
       urlpath: '{{ CATALOG_DIR }}/inventory.csv'
     description: Describes the data in the hrrrzarr source
     driver: intake.source.csv.CSVSource
