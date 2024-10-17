@@ -1,94 +1,134 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Creating Intake Catalogs &#8212; Intake Cookbook</title>
-    
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-pythia-theme.min.css?v=ba7ce088" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=c54c090a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-T52X8HNYE8"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-T52X8HNYE8');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-T52X8HNYE8');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/creating_catalogs';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Introduction to Intake" href="intake_introduction.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="17 October 2024"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="132">
-    <div class="container-fluid" id="shim"></div>
-    <div class="container-fluid" id="banner"></div>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main"><div class="container-xl">
-
-  <div id="navbar-start">
-    
-    
-
-<a class="navbar-brand" href="https://projectpythia.org">
-  <img src="../_static/pythia_logo-white-rtext.svg" class="logo" alt="logo">
-</a>
-
-
-    
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
   
-  <div id="navbar-collapsible" class=" collapse navbar-collapse">
-    <div id="navbar-center" class="mr-auto">
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div class="pst-scroll-pixel-helper"></div>
+    <header class="bd-header navbar navbar-dark navbar-expand-lg bg-dark fixed-top bd-navbar shadow" id="navbar-main">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+     
+  
+
+<a class="navbar-brand logo" href="https://projectpythia.org">
+  
+  
+  
+  
+  
+    
+    
       
-      <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
+    
+    
+    <img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-light" alt="Intake Cookbook - Home"/>
+    <script>document.write(`<img src="../_static/pythia_logo-white-rtext.svg" class="logo__image only-dark" alt="Intake Cookbook - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
   
   <li class="nav-item">
     
@@ -126,267 +166,256 @@ const thebe_selector_output = ".output, .cell_output"
   </li>
   
   
-</ul>
-      </div>
+</ul></div>
       
     </div>
-
-    <div id="navbar-end">
-      
-      <div class="navbar-end-item">
-        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
-        <li class="nav-item">
-          <a class="nav-link" href="https://github.com/ProjectPythia" rel="noopener" target="_blank" title="GitHub">
-            <span><i class="fab fa-github-square"></i></span>
-            <label class="sr-only">GitHub</label>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/project_pythia" rel="noopener" target="_blank" title="Twitter">
-            <span><i class="fab fa-twitter-square"></i></span>
-            <label class="sr-only">Twitter</label>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" rel="noopener" target="_blank" title="YouTube">
-            <span><i class="fab fa-youtube-square"></i></span>
-            <label class="sr-only">YouTube</label>
-          </a>
-        </li>
-      </ul>
-      </div>
-      
-    </div>
-  </div>
-</div>
-    </nav>
-    <div class="container-xl">
-      <div class="row">
-        
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
-        <form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Intake Cookbook
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Preamble
- </span>
-</p>
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ProjectPythia" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/project_pythia" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+        
+        
+        
+        <div class="bd-sidebar-primary bd-sidebar">
+          
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item"><ul id="navbar-main-elements" class="navbar-nav">
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org">Home</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://foundations.projectpythia.org">Foundations</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://cookbooks.projectpythia.org">Cookbooks</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/resource-gallery.html">Resources</a>
+  </li>
+  
+  <li class="nav-item">
+    
+    
+    
+    <a class="nav-link nav-internal" href="https://projectpythia.org/index.html#join-us">Community</a>
+  </li>
+  
+  
+</ul></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ProjectPythia" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/project_pythia" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCoZPBqJal5uKpO8ZiwzavCw" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-youtube-square fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Intake Cookbook
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Preamble</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="how-to-cite.html">
-   How to Cite This Cookbook
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="how-to-cite.html">How to Cite This Cookbook</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Intoduction to Intake
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Intoduction to Intake</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intake_introduction.html">
-   Introduction to Intake
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Creating Intake Catalogs
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="intake_introduction.html">Introduction to Intake</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Creating Intake Catalogs</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by <a href="https://projectpythia.org">Project Pythia</a>.<br><br>
-All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons BY 4.0 (CC BY 4.0)</a>.<br><br>
-
-</div>
-
-</div>
-
-        
-
-        <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main"><div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/creating_catalogs.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/ProjectPythia/intake-cookbook/"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/ProjectPythia/intake-cookbook//issues/new?title=Issue%20on%20page%20%2Fnotebooks/creating_catalogs.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/ProjectPythia/intake-cookbook/edit/main/notebooks/creating_catalogs.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://binder.projectpythia.org/v2/gh/ProjectPythia/intake-cookbook/main?urlpath=lab/tree/notebooks/creating_catalogs.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
         </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> On this page
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#imports">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#setting-up-the-environment">
-   Setting up the Environment
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-your-first-data-source">
-   Adding Your First Data Source
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modifying-the-source">
-     Modifying the Source
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documenting-the-data">
-   Documenting the Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#testing-the-catalog">
-   Testing the Catalog
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources-and-references">
-   Resources and references
-  </a>
- </li>
-</ul>
+        
+        <main id="main-content" class="bd-main" role="main">
+          
 
-            </nav>
-        </div>
-    </div>
-</div>
-          <div id="main-content" class="row">
-            <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-              
-              <div>
+            <div class="bd-content">
+
+              <div class="bd-article-container">
+
                 
-  <p><a class="reference internal" href="../_images/thumbnail.svg"><img alt="Intake Logo" src="../_images/thumbnail.svg" width="250" /></a></img></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="creating-intake-catalogs">
-<h1>Creating Intake Catalogs<a class="headerlink" href="#creating-intake-catalogs" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+                  
+                  
+<div id="searchbox"></div>
+                  <article class="bd-article">
+                    
+  <p><a class="reference internal" href="../_images/thumbnail.svg"><img alt="Intake Logo" src="../_images/thumbnail.svg" style="width: 250px;" /></a></img></p>
+<section class="tex2jax_ignore mathjax_ignore" id="creating-intake-catalogs">
+<h1>Creating Intake Catalogs<a class="headerlink" href="#creating-intake-catalogs" title="Link to this heading"><i class="fas fa-link"></i></a></h1>
 <hr class="docutils" />
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>In the last lesson we learned to use Intake catalogs to simplify the process of accessing research data. In this lesson we will walk through the steps of creating a catalog for your research data by recreating the catalog in the previous lesson.</p>
 <ol class="arabic simple">
 <li><p>Creating an Intake catalog</p></li>
 <li><p>Documenting your data source</p></li>
 <li><p>Share your catalog on Github.</p></li>
 </ol>
-</div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<table class="colwidths-auto table">
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
 <th class="head"><p>Importance</p></th>
@@ -394,7 +423,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference internal" href="intake_introduction.html"><span class="doc std std-doc">Intro to Intake</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="intake_introduction.html"><span class="std std-doc">Intro to Intake</span></a></p></td>
 <td><p>Necessary</p></td>
 <td><p></p></td>
 </tr>
@@ -412,13 +441,14 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </tr>
 </tbody>
 </table>
+</div>
 <ul class="simple">
 <li><p><strong>Time to learn</strong>: 45 minutes</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">intake</span>
@@ -435,9 +465,9 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="setting-up-the-environment">
-<h2>Setting up the Environment<a class="headerlink" href="#setting-up-the-environment" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="setting-up-the-environment">
+<h2>Setting up the Environment<a class="headerlink" href="#setting-up-the-environment" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>By the end of this tutorial we will have created a git repository that we can host on Github to share our catalog.</p>
 <p>Start by <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/create-a-repo">creating a Github repository</a> called “intake-demo”, and then clone the repository to your local machine. Be sure to replace path/to/Github/repository with the name of the repository you just made in the following command.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>path/to/Github/repository
@@ -477,9 +507,9 @@ sources: {}
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="adding-your-first-data-source">
-<h2>Adding Your First Data Source<a class="headerlink" href="#adding-your-first-data-source" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="adding-your-first-data-source">
+<h2>Adding Your First Data Source<a class="headerlink" href="#adding-your-first-data-source" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Intake only knows how to handle a few different data formats. To handle other formats it uses plugable drivers. To use the <a class="reference external" href="https://mesowest.utah.edu/html/hrrr/">Mesowest’s HRRR Zarr data</a> we will use the intake-xarray package which provides a driver for reading Zarr data into <a class="reference external" href="https://foundations.projectpythia.org/core/xarray.html">Xarray</a> datasets. Drivers are installed as python packages and integrate into the Intake library. When intalled Intake creates a open_{driver} method for each driver in the package. Installing the intake-xarray package allows us to access zarr data using the <code class="docutils literal notranslate"><span class="pre">open_zarr</span></code> method.</p>
 <p>Mesowest’s HRRR Zarr data is stored in AWS. The <a class="reference external" href="https://mesowest.utah.edu/html/hrrr/zarr_documentation/html/zarr_variables.html">file structure</a> of the <a class="reference external" href="https://hrrrzarr.s3.amazonaws.com/index.html">hrrrzarr S3 bucket</a> looks like</p>
 <p>s3://hrrrzarr/sfc/yyyymmdd/yyyymmdd_hhz_anl.zarr/level/param/level</p>
@@ -501,9 +531,7 @@ sources: {}
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;s3://hrrrzarr/sfc/20160824/20160824_00z_anl.zarr/surface/TMP/surface&#39;</span><span class="p">,</span>
            <span class="s1">&#39;s3://hrrrzarr/sfc/20160824/20160824_00z_anl.zarr/surface/TMP&#39;</span><span class="p">]</span>
 
-<span class="n">source</span> <span class="o">=</span> <span class="n">intake</span><span class="o">.</span><span class="n">open_zarr</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                          <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;anon&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-                          <span class="n">consolidated</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">source</span> <span class="o">=</span> <span class="n">intake</span><span class="o">.</span><span class="n">open_zarr</span><span class="p">(</span><span class="n">urls</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;anon&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
 
 <span class="n">source</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;hrrrzarr&#39;</span>
 <span class="n">source</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Mesowest&#39;s HRRR data. See readme source for more information.&quot;</span>
@@ -513,6 +541,10 @@ sources: {}
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/intake-cookbook-dev/lib/python3.12/site-packages/intake_xarray/base.py:21: FutureWarning: The return type of `Dataset.dims` will be changed to return a set of dimension names in future, in order to be more consistent with `DataArray.dims`. To access a mapping from dimension names to lengths, please use `Dataset.sizes`.
+  &#39;dims&#39;: dict(self._ds.dims),
+</pre></div>
+</div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewBox="0 0 32 32">
@@ -544,6 +576,7 @@ sources: {}
 }
 
 html[theme=dark],
+html[data-theme=dark],
 body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
@@ -594,7 +627,7 @@ body.vscode-dark {
 .xr-sections {
   padding-left: 0 !important;
   display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
 }
 
 .xr-section-item {
@@ -602,7 +635,8 @@ body.vscode-dark {
 }
 
 .xr-section-item input {
-  display: none;
+  display: inline-block;
+  opacity: 0;
 }
 
 .xr-section-item input + label {
@@ -612,6 +646,10 @@ body.vscode-dark {
 .xr-section-item input:enabled + label {
   cursor: pointer;
   color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
 }
 
 .xr-section-item input:enabled + label:hover {
@@ -876,27 +914,27 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 4MB
 Dimensions:                  (projection_y_coordinate: 1059,
                               projection_x_coordinate: 1799)
 Coordinates:
-  * projection_x_coordinate  (projection_x_coordinate) float64 -2.698e+06 ......
-  * projection_y_coordinate  (projection_y_coordinate) float64 -1.587e+06 ......
+  * projection_x_coordinate  (projection_x_coordinate) float64 14kB -2.698e+0...
+  * projection_y_coordinate  (projection_y_coordinate) float64 8kB -1.587e+06...
 Data variables:
-    TMP                      (projection_y_coordinate, projection_x_coordinate) float16 ...
-    forecast_period          timedelta64[ns] 00:00:00
-    forecast_reference_time  datetime64[ns] 2016-08-24
-    height                   float64 1e+03
-    pressure                 float64 2.5e+04
-    time                     datetime64[ns] 2016-08-24</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-9c961e03-79c9-44b1-8d9a-c981dbcbf5b5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-9c961e03-79c9-44b1-8d9a-c981dbcbf5b5' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>projection_y_coordinate</span>: 1059</li><li><span class='xr-has-index'>projection_x_coordinate</span>: 1799</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-72937dee-1267-4c41-be3a-5f712c6917a0' class='xr-section-summary-in' type='checkbox'  checked><label for='section-72937dee-1267-4c41-be3a-5f712c6917a0' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_x_coordinate</span></div><div class='xr-var-dims'>(projection_x_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.698e+06 -2.695e+06 ... 2.696e+06</div><input id='attrs-d8ea91aa-191a-45df-a832-b5334aaad18f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d8ea91aa-191a-45df-a832-b5334aaad18f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-78511b79-cfe3-48f5-b20d-ffddfe58d1b4' class='xr-var-data-in' type='checkbox'><label for='data-78511b79-cfe3-48f5-b20d-ffddfe58d1b4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-2697520.142522, -2694520.142522, -2691520.142522, ...,  2690479.857478,
-        2693479.857478,  2696479.857478])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_y_coordinate</span></div><div class='xr-var-dims'>(projection_y_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.587e+06 -1.584e+06 ... 1.587e+06</div><input id='attrs-121ce8c5-79d5-4461-8f08-a49283f935d0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-121ce8c5-79d5-4461-8f08-a49283f935d0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fb6e1944-6c73-479c-a11b-626708eea843' class='xr-var-data-in' type='checkbox'><label for='data-fb6e1944-6c73-479c-a11b-626708eea843' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-1587306.152557, -1584306.152557, -1581306.152557, ...,  1580693.847443,
-        1583693.847443,  1586693.847443])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8d54f1f1-39a5-4037-bc9d-c09a24e07c9f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-8d54f1f1-39a5-4037-bc9d-c09a24e07c9f' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TMP</span></div><div class='xr-var-dims'>(projection_y_coordinate, projection_x_coordinate)</div><div class='xr-var-dtype'>float16</div><div class='xr-var-preview xr-preview'>298.5 298.5 298.5 ... 291.8 291.8</div><input id='attrs-07323bce-4f51-4d24-9f76-6deb7fb87651' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-07323bce-4f51-4d24-9f76-6deb7fb87651' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-95417d7e-484b-4c8b-9ba1-827461789856' class='xr-var-data-in' type='checkbox'><label for='data-95417d7e-484b-4c8b-9ba1-827461789856' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>GRIB_PARAM :</span></dt><dd>[2, 0, 0, 0]</dd><dt><span>coordinates :</span></dt><dd>forecast_period pressure height time forecast_reference_time</dd><dt><span>long_name :</span></dt><dd>surface/TMP</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>array([[298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.5],
+    TMP                      (projection_y_coordinate, projection_x_coordinate) float16 4MB ...
+    forecast_period          timedelta64[ns] 8B 00:00:00
+    forecast_reference_time  datetime64[ns] 8B 2016-08-24
+    height                   float64 8B 1e+03
+    pressure                 float64 8B 2.5e+04
+    time                     datetime64[ns] 8B 2016-08-24</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-754b152a-4507-4f47-a194-ceb244c94d1d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-754b152a-4507-4f47-a194-ceb244c94d1d' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>projection_y_coordinate</span>: 1059</li><li><span class='xr-has-index'>projection_x_coordinate</span>: 1799</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-a75cea18-5eca-48bd-bd79-43d64f105e2c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a75cea18-5eca-48bd-bd79-43d64f105e2c' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_x_coordinate</span></div><div class='xr-var-dims'>(projection_x_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.698e+06 -2.695e+06 ... 2.696e+06</div><input id='attrs-5ff46ae1-e1e0-43fa-88c7-03915100d116' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5ff46ae1-e1e0-43fa-88c7-03915100d116' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e37e9f96-6bb3-4908-86cd-f6c9c84af3c9' class='xr-var-data-in' type='checkbox'><label for='data-e37e9f96-6bb3-4908-86cd-f6c9c84af3c9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-2697520.142522, -2694520.142522, -2691520.142522, ...,  2690479.857478,
+        2693479.857478,  2696479.857478])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_y_coordinate</span></div><div class='xr-var-dims'>(projection_y_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.587e+06 -1.584e+06 ... 1.587e+06</div><input id='attrs-0085bd61-03ac-43a2-b750-dc2166d6559c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0085bd61-03ac-43a2-b750-dc2166d6559c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0d7f3c61-2c9d-45f0-8c04-75d48b47222d' class='xr-var-data-in' type='checkbox'><label for='data-0d7f3c61-2c9d-45f0-8c04-75d48b47222d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-1587306.152557, -1584306.152557, -1581306.152557, ...,  1580693.847443,
+        1583693.847443,  1586693.847443])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-98841b35-fc91-4bd6-8439-3eb6ecb5245c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-98841b35-fc91-4bd6-8439-3eb6ecb5245c' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TMP</span></div><div class='xr-var-dims'>(projection_y_coordinate, projection_x_coordinate)</div><div class='xr-var-dtype'>float16</div><div class='xr-var-preview xr-preview'>298.5 298.5 298.5 ... 291.8 291.8</div><input id='attrs-c5746399-3ea3-4a23-8c0f-6ab1b11daf77' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c5746399-3ea3-4a23-8c0f-6ab1b11daf77' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ddf9da7c-39ec-4a9a-8ce6-8bf5270fa6a3' class='xr-var-data-in' type='checkbox'><label for='data-ddf9da7c-39ec-4a9a-8ce6-8bf5270fa6a3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>GRIB_PARAM :</span></dt><dd>[2, 0, 0, 0]</dd><dt><span>long_name :</span></dt><dd>surface/TMP</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>array([[298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.5],
        [298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.2],
        [298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.2],
        ...,
        [289.8, 289.8, 289.8, ..., 291.5, 291.5, 291.8],
        [289.8, 289.8, 289.8, ..., 291.5, 291.5, 291.8],
-       [289.8, 289.8, 289.8, ..., 291.5, 291.8, 291.8]], dtype=float16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_period</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>timedelta64[ns]</div><div class='xr-var-preview xr-preview'>00:00:00</div><input id='attrs-c3c56719-6cb6-44f1-bb83-48159bd7a947' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c3c56719-6cb6-44f1-bb83-48159bd7a947' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fcb0e3be-3c2e-4b47-8c1b-46cc564e73e6' class='xr-var-data-in' type='checkbox'><label for='data-fcb0e3be-3c2e-4b47-8c1b-46cc564e73e6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class='xr-var-data'><pre>array(0, dtype=&#x27;timedelta64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_reference_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-37fb598d-ada3-415a-9c61-5470f4349bc4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-37fb598d-ada3-415a-9c61-5470f4349bc4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8b94704c-cb42-4fa2-b1eb-fcbb7614514d' class='xr-var-data-in' type='checkbox'><label for='data-8b94704c-cb42-4fa2-b1eb-fcbb7614514d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>height</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+03</div><input id='attrs-f897d866-f479-4955-9a98-663b0b72c3c9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f897d866-f479-4955-9a98-663b0b72c3c9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0480040c-a592-4a4d-97ff-32457897d72a' class='xr-var-data-in' type='checkbox'><label for='data-0480040c-a592-4a4d-97ff-32457897d72a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array(1000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pressure</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.5e+04</div><input id='attrs-f220587d-ca60-42e7-b298-76e28b825d70' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f220587d-ca60-42e7-b298-76e28b825d70' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5b9d3868-45f0-4775-a595-e7c506290215' class='xr-var-data-in' type='checkbox'><label for='data-5b9d3868-45f0-4775-a595-e7c506290215' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd></dl></div><div class='xr-var-data'><pre>array(25000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-c01bf88d-1a75-4d2e-93e8-85a8b5f63fb8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c01bf88d-1a75-4d2e-93e8-85a8b5f63fb8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-79487651-0bb7-48b2-805e-6e050f758018' class='xr-var-data-in' type='checkbox'><label for='data-79487651-0bb7-48b2-805e-6e050f758018' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a9678644-a19e-4678-b3f9-7a299582f8ae' class='xr-section-summary-in' type='checkbox'  ><label for='section-a9678644-a19e-4678-b3f9-7a299582f8ae' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>projection_x_coordinate</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-3a0a4990-29c1-4d6a-b4e7-5c93dc09bab0' class='xr-index-data-in' type='checkbox'/><label for='index-3a0a4990-29c1-4d6a-b4e7-5c93dc09bab0' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-2697520.1425219304, -2694520.1425219304, -2691520.1425219304,
+       [289.8, 289.8, 289.8, ..., 291.5, 291.8, 291.8]], dtype=float16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_period</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>timedelta64[ns]</div><div class='xr-var-preview xr-preview'>00:00:00</div><input id='attrs-1364ed10-78a8-452d-bfcb-fe6cb86f2615' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1364ed10-78a8-452d-bfcb-fe6cb86f2615' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0797d352-da0d-4455-8638-f0cfe08201ad' class='xr-var-data-in' type='checkbox'><label for='data-0797d352-da0d-4455-8638-f0cfe08201ad' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class='xr-var-data'><pre>array(0, dtype=&#x27;timedelta64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_reference_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-f09d2a73-c4e4-4192-a744-78f14a707d62' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f09d2a73-c4e4-4192-a744-78f14a707d62' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a2aa56fb-93ae-4119-9517-793858ba50da' class='xr-var-data-in' type='checkbox'><label for='data-a2aa56fb-93ae-4119-9517-793858ba50da' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>height</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+03</div><input id='attrs-e3a25eea-4b98-4f05-a95b-96abc57fd149' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e3a25eea-4b98-4f05-a95b-96abc57fd149' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1deb3b74-85dc-4f2f-b12c-49bb41ca771f' class='xr-var-data-in' type='checkbox'><label for='data-1deb3b74-85dc-4f2f-b12c-49bb41ca771f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array(1000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pressure</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.5e+04</div><input id='attrs-496c4f60-7fae-419d-9535-e64eae751bea' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-496c4f60-7fae-419d-9535-e64eae751bea' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8f988054-ccb5-457e-8ba2-30a6364be16e' class='xr-var-data-in' type='checkbox'><label for='data-8f988054-ccb5-457e-8ba2-30a6364be16e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd></dl></div><div class='xr-var-data'><pre>array(25000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-372e0dd9-d47e-4a94-a967-97fca955ca65' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-372e0dd9-d47e-4a94-a967-97fca955ca65' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4a59d0b0-2ff7-423d-add5-d7672b00d210' class='xr-var-data-in' type='checkbox'><label for='data-4a59d0b0-2ff7-423d-add5-d7672b00d210' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6a3667d6-89b7-4d2e-9100-b7394cc7808b' class='xr-section-summary-in' type='checkbox'  ><label for='section-6a3667d6-89b7-4d2e-9100-b7394cc7808b' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>projection_x_coordinate</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-7f274a57-c80a-4739-9ba5-d4e0ae0f497e' class='xr-index-data-in' type='checkbox'/><label for='index-7f274a57-c80a-4739-9ba5-d4e0ae0f497e' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-2697520.1425219304, -2694520.1425219304, -2691520.1425219304,
        -2688520.1425219304, -2685520.1425219304, -2682520.1425219304,
        -2679520.1425219304, -2676520.1425219304, -2673520.1425219304,
        -2670520.1425219304,
@@ -905,7 +943,7 @@ Data variables:
         2678479.8574780696,  2681479.8574780696,  2684479.8574780696,
         2687479.8574780696,  2690479.8574780696,  2693479.8574780696,
         2696479.8574780696],
-      dtype=&#x27;float64&#x27;, name=&#x27;projection_x_coordinate&#x27;, length=1799))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>projection_y_coordinate</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-52d84f44-799f-4974-91b1-ac8b59930a63' class='xr-index-data-in' type='checkbox'/><label for='index-52d84f44-799f-4974-91b1-ac8b59930a63' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-1587306.1525566636, -1584306.1525566636, -1581306.1525566636,
+      dtype=&#x27;float64&#x27;, name=&#x27;projection_x_coordinate&#x27;, length=1799))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>projection_y_coordinate</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-b98c97d6-299f-43af-adb6-e1976b62d431' class='xr-index-data-in' type='checkbox'/><label for='index-b98c97d6-299f-43af-adb6-e1976b62d431' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-1587306.1525566636, -1584306.1525566636, -1581306.1525566636,
        -1578306.1525566636, -1575306.1525566636, -1572306.1525566636,
        -1569306.1525566636, -1566306.1525566636, -1563306.1525566636,
        -1560306.1525566636,
@@ -914,7 +952,7 @@ Data variables:
         1568693.8474433364,  1571693.8474433364,  1574693.8474433364,
         1577693.8474433364,  1580693.8474433364,  1583693.8474433364,
         1586693.8474433364],
-      dtype=&#x27;float64&#x27;, name=&#x27;projection_y_coordinate&#x27;, length=1059))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a24878fa-d7e4-487e-83b6-bdeeb7abc243' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-a24878fa-d7e4-487e-83b6-bdeeb7abc243' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;float64&#x27;, name=&#x27;projection_y_coordinate&#x27;, length=1059))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-5cce3794-f8d8-4aaf-9a98-a79426e3b8f8' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-5cce3794-f8d8-4aaf-9a98-a79426e3b8f8' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Above we used the <code class="docutils literal notranslate"><span class="pre">storage_options</span></code> argument to tell Intake how to access data on AWS. In this case we accessed the data as an anonymous user. The <code class="docutils literal notranslate"><span class="pre">consolidated=True</span></code> argument is given to tell <a class="reference external" href="https://foundations.projectpythia.org/core/xarray.html">Xarray</a> how to load the metadata for this source. Zarr data may contain consolidated metadata. If it does, using it can increase performance significantly.</p>
 <p>When you use Intake’s <code class="docutils literal notranslate"><span class="pre">open_{driver}</span></code> methods, it creates a catalog entry for the source. You can view the yaml using the source’s <code class="docutils literal notranslate"><span class="pre">yaml</span></code> method.</p>
@@ -928,8 +966,6 @@ Data variables:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sources:
   hrrrzarr:
     args:
-      chunks: null
-      consolidated: true
       storage_options:
         anon: true
       urlpath:
@@ -957,8 +993,8 @@ Data variables:
 </div>
 </div>
 </div>
-<div class="section" id="modifying-the-source">
-<h3>Modifying the Source<a class="headerlink" href="#modifying-the-source" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<section id="modifying-the-source">
+<h3>Modifying the Source<a class="headerlink" href="#modifying-the-source" title="Link to this heading"><i class="fas fa-link"></i></a></h3>
 <p>If we wanted we could add this yaml to our catalog and we could then load this data using Intake. However, there are many datasets we can load from the Zarr store with almost the same catalog entry. Making a separate entry for each would make the catalog cluttered and harder to use. Instead we will generalize this catalog entry so it applies to many datasets. Then we will create user parameters to give the catalog user the abillity to select the data they want.</p>
 <p>To generalize the source we need Intake to dynamically generate urls pointing to the Zarr arrays based off user set parameters. We will take the source created by the <code class="docutils literal notranslate"><span class="pre">open_zarr</span></code> method convert it to a python dictionary and then modify it to include user parameters. We can then use those parameters to generate the urls. Intake provides Jinja templating in catalogs to make this simple. Let’s start by defining user parameters.</p>
 <div class="cell docutils container">
@@ -1011,8 +1047,6 @@ Data variables:
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sources:
   hrrrzarr:
     args:
-      chunks: null
-      consolidated: true
       storage_options:
         anon: true
       urlpath:
@@ -1047,10 +1081,10 @@ Data variables:
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="documenting-the-data">
-<h2>Documenting the Data<a class="headerlink" href="#documenting-the-data" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+</section>
+<section id="documenting-the-data">
+<h2>Documenting the Data<a class="headerlink" href="#documenting-the-data" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>We have created a data source, but it may be a little tricky to use. We need a way to let users know what options they have for the <code class="docutils literal notranslate"><span class="pre">level</span></code> and <code class="docutils literal notranslate"><span class="pre">param</span></code> user parameters we defined earlier. The inventory.csv file, created from <a class="reference external" href="https://mesowest.utah.edu/html/hrrr/zarr_documentation/html/zarr_variables.html">Mesowest’s HRRR Zarr Variable List</a>, in this directory contains a table which shows what parameters are in the Zarr store and at what level in the atmosphere those parameters are available. Let’s open it as a source and add it to our source dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1058,154 +1092,9 @@ Data variables:
                                   <span class="n">csv_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;keep_default_na&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
 <span class="n">source</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;data_dictionary&#39;</span>
 <span class="n">source</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;Describes the data in the hrrrzarr source&#39;</span>
-
-<span class="n">source</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Parameter Long Name</th>
-      <th>Vertical Level</th>
-      <th>Parameter Short Name</th>
-      <th>Units</th>
-      <th>1st Version Available</th>
-      <th>Analysis or Forcast</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Hail</td>
-      <td>0.1_sigma_layer</td>
-      <td>HAIL_max_fcst</td>
-      <td>m</td>
-      <td>V4</td>
-      <td>anl</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Hail</td>
-      <td>0.1_sigma_layer</td>
-      <td>HAIL_1hr_max_fcst</td>
-      <td>m</td>
-      <td>V4</td>
-      <td>fcst</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Vertical Velocity</td>
-      <td>0.5_0.8_sigma_layer</td>
-      <td>DZDT_ave_fcst</td>
-      <td>m/s</td>
-      <td>V3</td>
-      <td>anl</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Vertical Velocity</td>
-      <td>0.5_0.8_sigma_layer</td>
-      <td>DZDT_1hr_ave_fcst</td>
-      <td>m/s</td>
-      <td>V3</td>
-      <td>fcst</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>U-Component Vertical Wind Shear</td>
-      <td>0_1000m_above_ground</td>
-      <td>VUCSH</td>
-      <td>1/s</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>187</th>
-      <td>Upward Short-Wave Rad. Flux</td>
-      <td>top_of_atmosphere</td>
-      <td>USWRF</td>
-      <td>W/m2</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>188</th>
-      <td>Simulated Brightness Temperature for GOES 11, ...</td>
-      <td>top_of_atmosphere</td>
-      <td>SBT113</td>
-      <td>K</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>189</th>
-      <td>Simulated Brightness Temperature for GOES 11, ...</td>
-      <td>top_of_atmosphere</td>
-      <td>SBT114</td>
-      <td>K</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>190</th>
-      <td>Simulated Brightness Temperature for GOES 12, ...</td>
-      <td>top_of_atmosphere</td>
-      <td>SBT123</td>
-      <td>K</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>191</th>
-      <td>Simulated Brightness Temperature for GOES 12, ...</td>
-      <td>top_of_atmosphere</td>
-      <td>SBT124</td>
-      <td>K</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-<p>192 rows × 7 columns</p>
-</div></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Vertical</span> <span class="pre">Level</span></code> column corresponds to the level paremeter in our data source and the <code class="docutils literal notranslate"><span class="pre">Parameter</span> <span class="pre">Short</span> <span class="pre">Name</span></code> corresponds to the <code class="docutils literal notranslate"><span class="pre">param</span></code> parameter.</p>
 <div class="cell docutils container">
@@ -1249,8 +1138,6 @@ Data variables:
   metadata: {}
 hrrrzarr:
   args:
-    chunks: null
-    consolidated: true
     storage_options:
       anon: true
     urlpath:
@@ -1480,8 +1367,6 @@ End of README</p>
     metadata: {}
   hrrrzarr:
     args:
-      chunks: null
-      consolidated: true
       storage_options:
         anon: true
       urlpath:
@@ -1551,9 +1436,9 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 git<span class="w"> </span>push
 </pre></div>
 </div>
-</div>
-<div class="section" id="testing-the-catalog">
-<h2>Testing the Catalog<a class="headerlink" href="#testing-the-catalog" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="testing-the-catalog">
+<h2>Testing the Catalog<a class="headerlink" href="#testing-the-catalog" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>Now that your catalog is on Github let’s try using it. In the cell below replace the url with the url pointing to the raw catalog file on your Github account</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1735,153 +1620,23 @@ End of README</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="o">.</span><span class="n">data_dictionary</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="o">.</span><span class="n">data_dictionary</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Parameter Long Name</th>
-      <th>Vertical Level</th>
-      <th>Parameter Short Name</th>
-      <th>Units</th>
-      <th>1st Version Available</th>
-      <th>Analysis or Forcast</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Hail</td>
-      <td>0.1_sigma_layer</td>
-      <td>HAIL_max_fcst</td>
-      <td>m</td>
-      <td>V4</td>
-      <td>anl</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Hail</td>
-      <td>0.1_sigma_layer</td>
-      <td>HAIL_1hr_max_fcst</td>
-      <td>m</td>
-      <td>V4</td>
-      <td>fcst</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Vertical Velocity</td>
-      <td>0.5_0.8_sigma_layer</td>
-      <td>DZDT_ave_fcst</td>
-      <td>m/s</td>
-      <td>V3</td>
-      <td>anl</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Vertical Velocity</td>
-      <td>0.5_0.8_sigma_layer</td>
-      <td>DZDT_1hr_ave_fcst</td>
-      <td>m/s</td>
-      <td>V3</td>
-      <td>fcst</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>U-Component Vertical Wind Shear</td>
-      <td>0_1000m_above_ground</td>
-      <td>VUCSH</td>
-      <td>1/s</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>187</th>
-      <td>Upward Short-Wave Rad. Flux</td>
-      <td>top_of_atmosphere</td>
-      <td>USWRF</td>
-      <td>W/m2</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>188</th>
-      <td>Simulated Brightness Temperature for GOES 11, ...</td>
-      <td>top_of_atmosphere</td>
-      <td>SBT113</td>
-      <td>K</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>189</th>
-      <td>Simulated Brightness Temperature for GOES 11, ...</td>
-      <td>top_of_atmosphere</td>
-      <td>SBT114</td>
-      <td>K</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>190</th>
-      <td>Simulated Brightness Temperature for GOES 12, ...</td>
-      <td>top_of_atmosphere</td>
-      <td>SBT123</td>
-      <td>K</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-    <tr>
-      <th>191</th>
-      <td>Simulated Brightness Temperature for GOES 12, ...</td>
-      <td>top_of_atmosphere</td>
-      <td>SBT124</td>
-      <td>K</td>
-      <td>V3</td>
-      <td>both</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
-<p>192 rows × 7 columns</p>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data_dictionary:
+  args:
+    csv_kwargs:
+      keep_default_na: false
+    urlpath: https://raw.githubusercontent.com/ProjectPythia/intake-cookbook/main/notebooks/inventory.csv
+  description: Describes the data in the hrrrzarr source
+  driver: intake.source.csv.CSVSource
+  metadata:
+    catalog_dir: https://raw.githubusercontent.com/ProjectPythia/intake-cookbook/main/notebooks
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1890,6 +1645,10 @@ End of README</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/intake-cookbook-dev/lib/python3.12/site-packages/intake_xarray/base.py:21: FutureWarning: The return type of `Dataset.dims` will be changed to return a set of dimension names in future, in order to be more consistent with `DataArray.dims`. To access a mapping from dimension names to lengths, please use `Dataset.sizes`.
+  &#39;dims&#39;: dict(self._ds.dims),
+</pre></div>
+</div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewBox="0 0 32 32">
@@ -1921,6 +1680,7 @@ End of README</p>
 }
 
 html[theme=dark],
+html[data-theme=dark],
 body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
@@ -1971,7 +1731,7 @@ body.vscode-dark {
 .xr-sections {
   padding-left: 0 !important;
   display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
 }
 
 .xr-section-item {
@@ -1979,7 +1739,8 @@ body.vscode-dark {
 }
 
 .xr-section-item input {
-  display: none;
+  display: inline-block;
+  opacity: 0;
 }
 
 .xr-section-item input + label {
@@ -1989,6 +1750,10 @@ body.vscode-dark {
 .xr-section-item input:enabled + label {
   cursor: pointer;
   color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
 }
 
 .xr-section-item input:enabled + label:hover {
@@ -2253,27 +2018,27 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 4MB
 Dimensions:                  (projection_y_coordinate: 1059,
                               projection_x_coordinate: 1799)
 Coordinates:
-  * projection_x_coordinate  (projection_x_coordinate) float64 -2.698e+06 ......
-  * projection_y_coordinate  (projection_y_coordinate) float64 -1.587e+06 ......
+  * projection_x_coordinate  (projection_x_coordinate) float64 14kB -2.698e+0...
+  * projection_y_coordinate  (projection_y_coordinate) float64 8kB -1.587e+06...
 Data variables:
-    TMP                      (projection_y_coordinate, projection_x_coordinate) float16 ...
-    forecast_period          timedelta64[ns] 00:00:00
-    forecast_reference_time  datetime64[ns] 2016-08-24
-    height                   float64 1e+03
-    pressure                 float64 2.5e+04
-    time                     datetime64[ns] 2016-08-24</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-304bfc66-b412-40b3-8f55-8836891c837b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-304bfc66-b412-40b3-8f55-8836891c837b' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>projection_y_coordinate</span>: 1059</li><li><span class='xr-has-index'>projection_x_coordinate</span>: 1799</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-4ad72769-9570-43ed-9887-c397a0763146' class='xr-section-summary-in' type='checkbox'  checked><label for='section-4ad72769-9570-43ed-9887-c397a0763146' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_x_coordinate</span></div><div class='xr-var-dims'>(projection_x_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.698e+06 -2.695e+06 ... 2.696e+06</div><input id='attrs-ecb8d60d-9987-4bee-9811-ecf818405592' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ecb8d60d-9987-4bee-9811-ecf818405592' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cb9a382c-f7a6-4781-b854-264dd3fb1145' class='xr-var-data-in' type='checkbox'><label for='data-cb9a382c-f7a6-4781-b854-264dd3fb1145' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-2697520.142522, -2694520.142522, -2691520.142522, ...,  2690479.857478,
-        2693479.857478,  2696479.857478])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_y_coordinate</span></div><div class='xr-var-dims'>(projection_y_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.587e+06 -1.584e+06 ... 1.587e+06</div><input id='attrs-d10dead3-c378-4a7f-b1c1-20b3b0f798e9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d10dead3-c378-4a7f-b1c1-20b3b0f798e9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bb7378c0-4c67-469c-8681-464e73e7f96b' class='xr-var-data-in' type='checkbox'><label for='data-bb7378c0-4c67-469c-8681-464e73e7f96b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-1587306.152557, -1584306.152557, -1581306.152557, ...,  1580693.847443,
-        1583693.847443,  1586693.847443])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f0019a74-b9d1-4225-ad88-751cbeb3a6d7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f0019a74-b9d1-4225-ad88-751cbeb3a6d7' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TMP</span></div><div class='xr-var-dims'>(projection_y_coordinate, projection_x_coordinate)</div><div class='xr-var-dtype'>float16</div><div class='xr-var-preview xr-preview'>298.5 298.5 298.5 ... 291.8 291.8</div><input id='attrs-c2de2571-0259-4d9c-b3c8-6cfbe98d0617' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c2de2571-0259-4d9c-b3c8-6cfbe98d0617' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cf1ec357-aaf1-4b37-bf44-0759d1ffa0a1' class='xr-var-data-in' type='checkbox'><label for='data-cf1ec357-aaf1-4b37-bf44-0759d1ffa0a1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>GRIB_PARAM :</span></dt><dd>[2, 0, 0, 0]</dd><dt><span>coordinates :</span></dt><dd>forecast_period pressure height time forecast_reference_time</dd><dt><span>long_name :</span></dt><dd>surface/TMP</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>array([[298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.5],
+    TMP                      (projection_y_coordinate, projection_x_coordinate) float16 4MB ...
+    forecast_period          timedelta64[ns] 8B 00:00:00
+    forecast_reference_time  datetime64[ns] 8B 2016-08-24
+    height                   float64 8B 1e+03
+    pressure                 float64 8B 2.5e+04
+    time                     datetime64[ns] 8B 2016-08-24</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-c16452b8-aaf0-4110-95ea-b26ee14a5704' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-c16452b8-aaf0-4110-95ea-b26ee14a5704' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>projection_y_coordinate</span>: 1059</li><li><span class='xr-has-index'>projection_x_coordinate</span>: 1799</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-2d07a7ef-76c9-46dd-81f8-476601ba1fa8' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2d07a7ef-76c9-46dd-81f8-476601ba1fa8' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_x_coordinate</span></div><div class='xr-var-dims'>(projection_x_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.698e+06 -2.695e+06 ... 2.696e+06</div><input id='attrs-f6a49887-bdb9-4946-a1b7-c2e84bfa607e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f6a49887-bdb9-4946-a1b7-c2e84bfa607e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-334f8fcd-7701-4dc2-8b74-3f5cce68fc05' class='xr-var-data-in' type='checkbox'><label for='data-334f8fcd-7701-4dc2-8b74-3f5cce68fc05' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-2697520.142522, -2694520.142522, -2691520.142522, ...,  2690479.857478,
+        2693479.857478,  2696479.857478])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>projection_y_coordinate</span></div><div class='xr-var-dims'>(projection_y_coordinate)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-1.587e+06 -1.584e+06 ... 1.587e+06</div><input id='attrs-2a436c4a-bc64-4dd4-a099-5b21897b73b9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2a436c4a-bc64-4dd4-a099-5b21897b73b9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bf4fc91e-a4c8-4d33-bfcd-7d0fb382e3fe' class='xr-var-data-in' type='checkbox'><label for='data-bf4fc91e-a4c8-4d33-bfcd-7d0fb382e3fe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([-1587306.152557, -1584306.152557, -1581306.152557, ...,  1580693.847443,
+        1583693.847443,  1586693.847443])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ec1d8707-64d1-4f5a-b904-61179c63d7a4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ec1d8707-64d1-4f5a-b904-61179c63d7a4' class='xr-section-summary' >Data variables: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TMP</span></div><div class='xr-var-dims'>(projection_y_coordinate, projection_x_coordinate)</div><div class='xr-var-dtype'>float16</div><div class='xr-var-preview xr-preview'>298.5 298.5 298.5 ... 291.8 291.8</div><input id='attrs-db9ed4e0-1c28-431e-8a63-27b94532e0e3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-db9ed4e0-1c28-431e-8a63-27b94532e0e3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5e42643c-3ee4-4282-9fb8-9ed8455931b8' class='xr-var-data-in' type='checkbox'><label for='data-5e42643c-3ee4-4282-9fb8-9ed8455931b8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>GRIB_PARAM :</span></dt><dd>[2, 0, 0, 0]</dd><dt><span>long_name :</span></dt><dd>surface/TMP</dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>array([[298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.5],
        [298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.2],
        [298.5, 298.5, 298.5, ..., 302.5, 302.5, 302.2],
        ...,
        [289.8, 289.8, 289.8, ..., 291.5, 291.5, 291.8],
        [289.8, 289.8, 289.8, ..., 291.5, 291.5, 291.8],
-       [289.8, 289.8, 289.8, ..., 291.5, 291.8, 291.8]], dtype=float16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_period</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>timedelta64[ns]</div><div class='xr-var-preview xr-preview'>00:00:00</div><input id='attrs-0bb72ccd-e858-49eb-aae1-b513e13a775a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0bb72ccd-e858-49eb-aae1-b513e13a775a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1c5b6192-f563-4bf2-85c3-049320b984a8' class='xr-var-data-in' type='checkbox'><label for='data-1c5b6192-f563-4bf2-85c3-049320b984a8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class='xr-var-data'><pre>array(0, dtype=&#x27;timedelta64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_reference_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-2922c185-0460-44cc-b1d3-e6d453d1a67f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2922c185-0460-44cc-b1d3-e6d453d1a67f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2513c760-4577-46c6-986e-dc6ab7d99c05' class='xr-var-data-in' type='checkbox'><label for='data-2513c760-4577-46c6-986e-dc6ab7d99c05' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>height</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+03</div><input id='attrs-4511426d-b173-44fb-b90f-2a19c5baede4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4511426d-b173-44fb-b90f-2a19c5baede4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d0e9f6c0-5048-4629-b47e-9f090eee15f6' class='xr-var-data-in' type='checkbox'><label for='data-d0e9f6c0-5048-4629-b47e-9f090eee15f6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array(1000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pressure</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.5e+04</div><input id='attrs-f31c7c8a-15ff-4578-8c27-ef3047d5c276' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f31c7c8a-15ff-4578-8c27-ef3047d5c276' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6222c5dd-f349-4421-874f-2dd5b1185d4e' class='xr-var-data-in' type='checkbox'><label for='data-6222c5dd-f349-4421-874f-2dd5b1185d4e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd></dl></div><div class='xr-var-data'><pre>array(25000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-644dbbb6-d5a0-4838-ab94-4954d4b01e46' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-644dbbb6-d5a0-4838-ab94-4954d4b01e46' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c9a3ec00-26cd-4d51-a1d6-a0dd049a910a' class='xr-var-data-in' type='checkbox'><label for='data-c9a3ec00-26cd-4d51-a1d6-a0dd049a910a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d8389093-02a5-4039-bbbc-52f435892c8b' class='xr-section-summary-in' type='checkbox'  ><label for='section-d8389093-02a5-4039-bbbc-52f435892c8b' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>projection_x_coordinate</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-8938999c-502c-4cd7-8922-b85e8d9f92f2' class='xr-index-data-in' type='checkbox'/><label for='index-8938999c-502c-4cd7-8922-b85e8d9f92f2' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-2697520.1425219304, -2694520.1425219304, -2691520.1425219304,
+       [289.8, 289.8, 289.8, ..., 291.5, 291.8, 291.8]], dtype=float16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_period</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>timedelta64[ns]</div><div class='xr-var-preview xr-preview'>00:00:00</div><input id='attrs-8d572eec-e663-4813-a2a2-43da81e9b0bd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8d572eec-e663-4813-a2a2-43da81e9b0bd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b286f3c6-c714-4e17-93ad-e26e864ad28f' class='xr-var-data-in' type='checkbox'><label for='data-b286f3c6-c714-4e17-93ad-e26e864ad28f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_period</dd></dl></div><div class='xr-var-data'><pre>array(0, dtype=&#x27;timedelta64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>forecast_reference_time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-cf2f794c-9ddf-4841-b43d-76df881b5345' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cf2f794c-9ddf-4841-b43d-76df881b5345' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b43873e3-2cb0-4406-98ab-dcb838fe6d0b' class='xr-var-data-in' type='checkbox'><label for='data-b43873e3-2cb0-4406-98ab-dcb838fe6d0b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>forecast_reference_time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>height</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1e+03</div><input id='attrs-94d43bed-800d-4472-9ad0-a54ddfd619d5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-94d43bed-800d-4472-9ad0-a54ddfd619d5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-17fcfd4f-493a-47bc-baa0-4fcee8ba5153' class='xr-var-data-in' type='checkbox'><label for='data-17fcfd4f-493a-47bc-baa0-4fcee8ba5153' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array(1000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pressure</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>2.5e+04</div><input id='attrs-396e68a4-4be3-4bad-bc13-3dfe36431420' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-396e68a4-4be3-4bad-bc13-3dfe36431420' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d3310c0c-c7b3-41a8-8b41-dbc3eeccaff9' class='xr-var-data-in' type='checkbox'><label for='data-d3310c0c-c7b3-41a8-8b41-dbc3eeccaff9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>pressure</dd><dt><span>units :</span></dt><dd>Pa</dd></dl></div><div class='xr-var-data'><pre>array(25000.)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-08-24</div><input id='attrs-42066446-7701-4262-9cc1-d1e9f9223010' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-42066446-7701-4262-9cc1-d1e9f9223010' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f8ff31dc-adf4-476a-a987-ba7271158a18' class='xr-var-data-in' type='checkbox'><label for='data-f8ff31dc-adf4-476a-a987-ba7271158a18' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2016-08-24T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-66c181ff-5b33-4ee9-9a3f-ac2409936383' class='xr-section-summary-in' type='checkbox'  ><label for='section-66c181ff-5b33-4ee9-9a3f-ac2409936383' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>projection_x_coordinate</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-ec481285-09d6-4c92-91d5-a3ebd1b1d0f1' class='xr-index-data-in' type='checkbox'/><label for='index-ec481285-09d6-4c92-91d5-a3ebd1b1d0f1' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-2697520.1425219304, -2694520.1425219304, -2691520.1425219304,
        -2688520.1425219304, -2685520.1425219304, -2682520.1425219304,
        -2679520.1425219304, -2676520.1425219304, -2673520.1425219304,
        -2670520.1425219304,
@@ -2282,7 +2047,7 @@ Data variables:
         2678479.8574780696,  2681479.8574780696,  2684479.8574780696,
         2687479.8574780696,  2690479.8574780696,  2693479.8574780696,
         2696479.8574780696],
-      dtype=&#x27;float64&#x27;, name=&#x27;projection_x_coordinate&#x27;, length=1799))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>projection_y_coordinate</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-5c063ab2-5061-40ba-90a4-7da5bb140fa8' class='xr-index-data-in' type='checkbox'/><label for='index-5c063ab2-5061-40ba-90a4-7da5bb140fa8' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-1587306.1525566636, -1584306.1525566636, -1581306.1525566636,
+      dtype=&#x27;float64&#x27;, name=&#x27;projection_x_coordinate&#x27;, length=1799))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>projection_y_coordinate</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-b794cffc-2dcc-4460-8ac8-3982ecd41cb6' class='xr-index-data-in' type='checkbox'/><label for='index-b794cffc-2dcc-4460-8ac8-3982ecd41cb6' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([-1587306.1525566636, -1584306.1525566636, -1581306.1525566636,
        -1578306.1525566636, -1575306.1525566636, -1572306.1525566636,
        -1569306.1525566636, -1566306.1525566636, -1563306.1525566636,
        -1560306.1525566636,
@@ -2291,24 +2056,24 @@ Data variables:
         1568693.8474433364,  1571693.8474433364,  1574693.8474433364,
         1577693.8474433364,  1580693.8474433364,  1583693.8474433364,
         1586693.8474433364],
-      dtype=&#x27;float64&#x27;, name=&#x27;projection_y_coordinate&#x27;, length=1059))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-cb9db415-e0f0-4db3-b84c-4c9ea7fe4d9e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-cb9db415-e0f0-4db3-b84c-4c9ea7fe4d9e' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;float64&#x27;, name=&#x27;projection_y_coordinate&#x27;, length=1059))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-47806edb-d112-49ce-8b28-cb8489c3f907' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-47806edb-d112-49ce-8b28-cb8489c3f907' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <p>In this tutorial we learned to create Intake catalogs and host them on Github. We learned to create sources with Intake and then modify them to make them more general. We explored a possible method for documenting data by adding a readme and data dictionary to our catalog. These guidelines will help you make your data more accessible to collaborators.</p>
-</div>
-<div class="section" id="resources-and-references">
-<h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+</section>
+<section id="resources-and-references">
+<h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Link to this heading"><i class="fas fa-link"></i></a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake Documentation</a></p></li>
 <li><p><a class="reference external" href="https://mesowest.utah.edu/html/hrrr/">NOAA High-Resolution Rapid Refresh (HRRR) Data Archive</a></p></li>
 <li><p><a class="reference external" href="https://mesowest.utah.edu/html/hrrr/zarr_documentation/html/zarr_variables.html">HRRR Zarr Variable List</a></p></li>
 <li><p><a class="reference external" href="https://hrrrzarr.s3.amazonaws.com/index.html">AWS hrrrzarr Bucket</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2330,36 +2095,331 @@ Data variables:
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
-              <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="intake_introduction.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introduction to Intake</p>
-        </div>
+                  </article>
+
+                
+                
+
+                
+                
+                  <footer class="prev-next-footer">
+                    
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intake_introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to Intake</p>
+      </div>
     </a>
 </div>
-            </div>
-          </div>
-        </main>
+                  </footer>
+                
+              </div>
 
-      </div>
+              
+              
+                
+                  <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-environment">Setting up the Environment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-your-first-data-source">Adding Your First Data Source</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-the-source">Modifying the Source</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documenting-the-data">Documenting the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-the-catalog">Testing the Catalog</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and references</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+                
+              
+
+
+                
+                <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-
-<footer class="footer">
-  <div class="container-fluid m-0 p-0">
   
-    <div class="footer-item">
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://binder.projectpythia.org/v2/gh/ProjectPythia/intake-cookbook/main?urlpath=lab/tree/notebooks/creating_catalogs.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/intake-cookbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/intake-cookbook/edit/main/notebooks/creating_catalogs.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ProjectPythia/intake-cookbook/issues/new?title=Issue%20on%20page%20%2Fnotebooks/creating_catalogs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/creating_catalogs.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+            </div>
+
+            <footer class="bd-footer-content">
+              
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
     
+<p class="component-author">
+By James Morley
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on 17 October 2024.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+            </footer>
+
+        </main>
+    </div>
+  </div>
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+     
+  
+  
+  
+  
+    <div class="footer-items__start">
+      <div class="container-fluid m-0 p-0">
+      
+        <div class="footer-item">
   <div class="container-fluid footer-logos">
     <div class="container-xl">
       <div class="row d-flex flex-wrap align-items-center">
         <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
-          <img alt="NCAR" src="../_images/NCAR-contemp-logo-blue.svg" style="width: 100%">
+          <img alt="NCAR" src="../_images/NSF-NCAR_Lockup-UCAR-Dark_102523.svg" style="width: 100%">
         </div>
         <div class="d-flex col-lg-3 col-md-4 col-sm-6 p-2 mx-auto">
           <img alt="Unidata" src="../_images/Unidata_logo_horizontal_1200x300.svg" style="width: 100%">
@@ -2369,34 +2429,26 @@ Data variables:
         </div>
       </div>
     </div>
-  </div>
-    </div>
-  
-    <div class="footer-item">
-    
-    </div>
-  
-    <div class="footer-item">
-      <div class="container-fluid footer-info">
+  </div></div>
+      
+        <div class="footer-item">  <div class="container-fluid footer-info">
     <div class="container-xl">
       <div class="d-flex justify-content-center">
         <p class="py-1 m-0">
-            &copy;&nbsp;2022.
+            &copy;&nbsp;2024.
         
           By James Morley.
         
-          Last updated on 15 August 2023.
+          Last updated on 17 October 2024.
         </p>
       </div>
     </div>
-  </div>
+  </div></div>
+      
+      </div>
     </div>
   
-    <div class="footer-item">
-    
-    </div>
-  
-  </div>
-</footer>
+
+  </footer>
   </body>
 </html>
