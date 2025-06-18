@@ -1,6 +1,6 @@
-<img src="thumbnail.svg" alt="thumbnail" width="300"/>
-
 # Intake Cookbook
+
+<img src="thumbnail.svg" alt="thumbnail" width="300"/>
 
 [![nightly-build](https://github.com/ProjectPythia/intake-cookbook/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/intake-cookbook/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/intake-cookbook/main?labpath=notebooks)

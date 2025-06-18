@@ -17,5 +17,6 @@ dependencies:
   - aiohttp
   - sphinx-pythia-theme
   - numpy<2
+  - mystmd
   - pip:
       - intake-markdown
